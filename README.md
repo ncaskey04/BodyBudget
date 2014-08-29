@@ -39,4 +39,12 @@ Setup: <br>
 -- git push origin dev (this creates dev branch on github)<br>
 
 Worklfow:<br>
--- in local branch<br>
+-- do all work in test branch (treat dev branch as local master)<br>
+-- when ready for pull do 'git pull origin master'
+-- for pushing changes do 'git push origin dev'
+
+
+
+
+
+
