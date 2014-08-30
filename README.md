@@ -40,8 +40,8 @@ Setup: <br>
 
 Worklfow:<br>
 -- do all work in test branch (treat dev branch as local master)<br>
--- when ready for pull do 'git pull origin master'
--- for pushing changes do 'git push origin dev'
+-- when ready for pull do 'git pull origin master'<br>
+-- for pushing changes do 'git push origin dev' in the dev branch<br>
 
 
 
