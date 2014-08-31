@@ -172,6 +172,7 @@ DEPENDENCIES
   handlebars_assets
   jbuilder (~> 2.0)
   jquery-rails
+  omniauth
   omniauth-fitbit
   pg
   pry
