@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   	auth_hash = request.env['omniauth.auth']
    
     @authorization = Authorization.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
+    
     if @authorization
       render :text => "Welcome back #{@authorization.user.first_name}! You have already signed up."
     else
