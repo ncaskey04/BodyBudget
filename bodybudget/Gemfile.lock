@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/tkgospodinov/omniauth-fitbit
+  revision: 0aefd35a5892f00e5418e8326fa3c9c89add8dcd
+  specs:
+    omniauth-fitbit (1.0.3)
+      multi_xml
+      omniauth-oauth (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -74,9 +82,6 @@ GEM
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
-    omniauth-fitbit (1.0.4)
-      multi_xml
-      omniauth-oauth (~> 1.0)
     omniauth-oauth (1.0.1)
       oauth
       omniauth (~> 1.0)
@@ -172,8 +177,7 @@ DEPENDENCIES
   handlebars_assets
   jbuilder (~> 2.0)
   jquery-rails
-  omniauth
-  omniauth-fitbit
+  omniauth-fitbit!
   pg
   pry
   pry-rails
