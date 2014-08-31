@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
   def new
   end
 
@@ -8,8 +9,10 @@ class SessionsController < ApplicationController
     auth_hash = request.env['omniauth.auth']
     # show the auth_token info
     render :text => auth_hash.inspect
+
   end
 
   def failure
   end
+
 end

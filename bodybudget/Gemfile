@@ -43,3 +43,19 @@ gem 'omniauth-fitbit', :git => 'https://github.com/tkgospodinov/omniauth-fitbit'
 
 # use fitbit gem
 gem 'fitgem'
+
+# handlebars template stuff
+gem 'handlebars_assets'
+
+# typhoeus for handling JSON requests
+gem 'typhoeus'
+
+group :development do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'ffaker', '~> 1.25.0'
+  gem 'rspec-rails', '~> 3.0.0'
+end
+
+
+
