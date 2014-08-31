@@ -14,3 +14,24 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+FITBIT INFO
+
+Client (Consumer) Key
+959e020d204549509cdbaaa5f5e21c2b
+
+Client (Consumer) Secret
+52b465fa0a694a908bf3593bbd3fd365
+
+Temporary Credentials (Request Token) URL
+https://api.fitbit.com/oauth/request_token
+
+Token Credentials (Access Token) URL
+https://api.fitbit.com/oauth/access_token
+
+Authorize URL
+https://www.fitbit.com/oauth/authorize
+
+YUMMLY INFO
+
+
