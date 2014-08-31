@@ -4,10 +4,6 @@ Rails.application.routes.draw do
 
   resources :users 
 
-  get '/login', :to => 'sessions#new', :as => :login
-  get '/auth/:provider/callback', :to => 'sessions#create'
-  get '/auth/failure', :to => 'sessions#failure'
-
   # this will set up a route to log into fitbit, create a new session, and set the path variable to 'login'
   get '/login', :to => 'sessions#new', :as => :login
 
