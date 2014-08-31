@@ -14,8 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
  
- // FITBIT API INFO
+// FITBIT API INFO
 
 Client (Consumer) Key
 959e020d204549509cdbaaa5f5e21c2b

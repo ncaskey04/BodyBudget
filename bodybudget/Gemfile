@@ -38,9 +38,10 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-#Use fitbit oauth gem and fitbit gem
-gem 'omniauth'
-gem 'omniauth-fitbit'
+# implements the oauth fitbit strategy
+gem 'omniauth-fitbit', :git => 'https://github.com/tkgospodinov/omniauth-fitbit'
+
+# use fitbit gem
 gem 'fitgem'
 
 # handlebars template stuff
@@ -55,6 +56,3 @@ group :development do
   gem 'ffaker', '~> 1.25.0'
   gem 'rspec-rails', '~> 3.0.0'
 end
-
-
-
