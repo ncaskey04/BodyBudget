@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :foods
   has_many :authorizations
 
+  has_secure_password
+
   validates :first_name,
             :presence => true,
             :length => {:minimum => 2}
