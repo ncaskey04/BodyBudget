@@ -24,57 +24,38 @@ $(document).ready(function() {
         label: "Yellow"
     }
 ];
-	
 
-  // function updateData() {
-  //     data.forEach(function(entry) {
-  //         entry.value += 10;
-  //     });
-  // }
 //refactoring search api code
-
-
-  $(".getInfo")[0].onsubmit = function (e){
-	e.preventDefault();
-	var recipe = $('.recipeName').val();
-	// var yummlyId = ENV["YUMMLY_ID"];
-	// var yummlyKey = ENV["YUMMLY_KEY"];
-
-	$.ajax({
-		url: "http://api.yummly.com/v1/api/recipes?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9&q="+recipe,
+//search yummly api
+function searchFood(search){
+	return $.ajax({ 
+		url: "http://api.yummly.com/v1/api/recipes?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9&q="+search,
 		data: {
-			requirePictures: "true",
+			"requirePictures": "true",
 			format: "json"
-	},
-	dataType: "jsonp",
-	success: function (response){
-		// console.log(response);
-		response.matches.forEach(function (itm){
-			console.log(itm)
-			$(".user-data").append("<p>"+itm.recipeName+"</p>")
-		})
-		$(".user-data").remove;
-  }
-})
+		},
+		dataType: "jsonp"
+	});
+}
 
-    var ctx = $("#chart-area")[0].getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(data, {
-      responsive : true,
-      animateRotate: true,
-      animateScale: false,
-      percentageInnerCutout: 70,
-      animationEasing : "easeInOutQuart"
-	  });
-	
-	// console.log(myDoughnut)
- //  updateData(); // for demo only
-	// var index = 0;
+	$(".getInfo").on('submit', function(e){
+		e.preventDefault();
+		$(".user-data").html("");
+		var recipe = $('.recipeName').val();
+			//defered promise
 
- //    myDoughnut.segments.forEach(function(segment) {
- //      segment.value = data[index++].value;
- //    });
- //      myDoughnut.update();
-  };
+		$.when(searchFood(recipe)).done(function(result){
+			$('.user-data').html("");
+			
+			if(result.matches.length === 0){
+				$('.user-data').append("<h2>Sorry nothing came up!</h2>");
+			} else {
+				result.matches.forEach(function (itm){
+					$(".user-data").append("<p>"+itm.recipeName+"</p>")
+				})
+			}
+		});
+	});
 });
 
 
