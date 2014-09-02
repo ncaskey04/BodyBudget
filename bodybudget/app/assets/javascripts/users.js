@@ -30,8 +30,27 @@ $(document).ready(function() {
 var foodIdArray = [];
 var course = "";
 var date = new Date();
-var time = date.getHours();
 
+var time = date.getHours();
+var ctx = $("#chart-area")[0].getContext("2d");
+
+window.myDoughnut = new Chart(ctx).Doughnut(data, {
+  responsive : true,
+  animateRotate: false,
+  animateScale: false,
+  percentageInnerCutout: 70,
+  animationEasing : "easeInOutQuart"
+});
+
+
+document.getElementById("button").onclick = function() {
+				var index = 0;
+				myDoughnut.segments.forEach(function(segment) {
+					console.log(segment.value);
+					segment.value = Math.random() * 10;
+				});
+					myDoughnut.update();
+			};
 
 if (time >= 5 && time < 12){
 	course = "Breakfast and Brunch";
@@ -74,6 +93,7 @@ function searchFood(search){
 // 	return $.getJSON(//api.yummly.com/v1/api/recipe/recipe-id?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY
 // }
 
+
 	$(".getInfo").on('submit', function(e){
 		e.preventDefault();
 		$(".user-data").html("");
@@ -90,6 +110,7 @@ function searchFood(search){
 
 					// $(".user-data").append("<img src="itm. "/>")
 					$(".user-data").append("<p>"+itm.id+"</p>")
+					// $(".user-date").append
 				})
 			}
 		});
