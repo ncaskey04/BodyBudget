@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+
   get 'users#index'
+  get 'articles/index'
+
   root to: 'users#index'
 
   resources :users
