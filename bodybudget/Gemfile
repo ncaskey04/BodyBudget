@@ -44,6 +44,9 @@ gem 'omniauth-fitbit', :git => 'https://github.com/tkgospodinov/omniauth-fitbit'
 # use fitbit gem
 gem 'fitgem'
 
+# awesome print
+gem 'awesome_print'
+
 # handlebars template stuff
 gem 'handlebars_assets'
 

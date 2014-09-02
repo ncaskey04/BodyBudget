@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
 
-
-  get 'users#index'
-  get 'articles/index'
-
   root to: 'users#index'
 
-  resources :users
+  get 'articles/index'
 
   get '/login', :to => 'sessions#new', :as => :login
   get '/auth/:provider/callback', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'
+
+  resources :users
 
 end
