@@ -11,18 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831013324) do
+ActiveRecord::Schema.define(version: 20140829230734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "authorizations", force: true do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "foods", force: true do |t|
     t.string   "recipe_name"
@@ -50,11 +42,11 @@ ActiveRecord::Schema.define(version: 20140831013324) do
   add_index "stats", ["user_id"], name: "index_stats_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "token"
     t.string   "email"
-    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
