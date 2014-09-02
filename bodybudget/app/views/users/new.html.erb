@@ -1,8 +1,7 @@
 <%= form_for @user do |f| %>
 
     <%= f.label :first_name %></br>
-    <%= f.text_field :first_name, class: "form-control", placeholder: "First Name",
-    autofocus: true %></br>
+    <%= f.text_field :first_name placeholder: "First Name" autofocus: true %></br>
 
     <%= f.label :last_name %></br>
     <%= f.text_field :last_name %></br>
@@ -10,5 +9,6 @@
     <%= f.label :email %></br>
     <%= f.text_field :email %>
 
-    <%= f.submit "Save Your User Info", :class => "btn btn-sunny text-uppercase" %>
-  <% end %>
+    <%= f.submit <a href="/login">Save user info</a> %>
+
+<% end %>
