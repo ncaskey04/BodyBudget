@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :stats
   has_many :foods
+  has_many :authorizations
+
+  has_secure_password
 
   validates :first_name,
             :presence => true,
@@ -15,12 +18,9 @@ class User < ActiveRecord::Base
             :format => {with: /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i},
             :uniqueness => {case_sensitive: false}
 
-  validates :password,
-            :presence => true,
-            :length => {:minimum => 6}, on: :create
-
-  # validates :token,
-  #           :presence => true
+  # validates :password,
+  #           :presence => true,
+  #           :length => {:minimum => 6}, on: :create
 
   def self.authenticate email, password
     User.find_by_email(email).try(:authenticate,password)
@@ -33,5 +33,11 @@ class User < ActiveRecord::Base
     self.save!(validate: false)
   end
 
+  def add_provider(auth_hash)
+    # Check if the provider already exists, so we don't add it twice
+    unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
+      Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+    end
+  end
 
 end

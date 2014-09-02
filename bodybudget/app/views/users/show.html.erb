@@ -1,15 +1,24 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+<div class="course-time">
+	
+</div>
 
-<div id="blah" class="values">
-		<p>orange</p>
-		<p>green</p>
-		<p>red</p>
+<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
+<%= label_tag "recipe", "Search for:" %>
+<%= text_field_tag '', nil, id:"recipe", class: "recipeName", autofocus: true %>
+<%= submit_tag ("Click Me") %>
+<% end %>
+<div class="user-data">
+	
 </div>
 
 <div id="canvas-holder">
 			<canvas id="chart-area" width="500" height="500"/>
 </div>
+
+
+
 
 
 
