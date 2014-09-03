@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'fitbit/index'
+
+  get 'fitbit/results'
+
   root to: 'users#index'
 
   get 'articles/index'
