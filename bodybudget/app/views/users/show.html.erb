@@ -1,26 +1,28 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<div class="course-time">
-	
+<div class="row">
+	<div class="col-lg-6">
+		<div class="course-time"></div>
+		<div class="row">
+			<div class="col-xs-9 form">
+				<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
+				<%= label_tag "recipe", "What do you want to eat?", class: "control-label" %>
+				<%= text_field_tag '', nil, id:"recipe", class: "recipeName form-control", autofocus: true %>
+				<%= submit_tag ("Find Food"), class: "btn btn-success margin-top margin-bottom" %>
+				<% end %>
+			</div>
+			<div class="col-xs-3"></div>
+			</div>
+		<h3>Search Result:</h3>
+		<div>
+			<div class="user-data"></div>
+		</div>
+	</div>
+
+	<div id="fixed-container" class="canvas-holder col-lg-6">
+		<canvas id="chart-area" width="425" height="425"></canvas>
+		<div class="cal-title">Cal</div>
+		<div class="cal-caption">0</div>
+		<!-- <div class="protein-caption">Protein: <span></span></div>
+		<div class="fat-caption">Fat: </div>
+		<div class="carb-caption">Carbs: </div>
+	</div>	 -->
 </div>
-
-<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
-<%= label_tag "recipe", "Search for:" %>
-<%= text_field_tag '', nil, id:"recipe", class: "recipeName", autofocus: true %>
-<%= submit_tag ("Click Me") %>
-<% end %>
-<div id="button">click me</div>
-<div class="user-data">
-		
-</div>
-
-<div id="canvas-holder">
-			<canvas id="chart-area" width="" height="125"/>
-</div>
-
-
-
-
-
-
-

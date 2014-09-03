@@ -14,3 +14,125 @@
  *= require_self
  *= require "bootstrap.min"
  */
+
+.header{
+	font-family: 
+}
+
+.thumb-ht {
+	height: 425px;
+}
+
+.grey {
+	height: 2450px;
+	background-color: #ecf0f1;
+}
+
+.margin-top {
+	margin-top: 1em;
+}
+
+.margin-bottom {
+	margin-bottom: 1em;
+}
+
+@media (min-width: 1200px){
+#fixed-container{
+	  position: fixed;
+	  width: 33%;
+	  right: 155px;
+	  top: 0px;
+	}
+}
+.canvas-holder {
+	margin-top: 20em;
+}
+
+.cal-caption {
+    font-family: Lato,sans-serif;
+    color: #7f8c8d;
+    opacity: 20;
+    font-size: 55px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 425px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 425px;
+    z-index: -1;
+  }
+
+.cal-title {
+    font-family: Lato,sans-serif;
+    color: #7f8c8d;
+    opacity: 20;
+    font-size: 40px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 525px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 425px;
+    z-index: -1;
+  }
+
+ /* .carb-caption {
+    font-family: Lato,sans-serif;
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 300px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 200px;
+  }
+
+  .protein-caption {
+    font-family: Lato,sans-serif;
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 300px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 100px;
+  }
+
+  .fat-caption {
+    font-family: Lato,sans-serif;
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 900px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 425px;
+  }*/

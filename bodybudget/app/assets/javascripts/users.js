@@ -14,20 +14,43 @@ $(document).ready(function() {
         value: 30,  
         color: "#46BFBD",
         highlight: "#5AD3D1",
-        label: "Fat"
+        label: "Fat",
+        labelColor : 'black',
+        labelFontSize : '16'
     },
     {
         value: 30,
         color: "#FDB45C",
-        opacity: 30,
         highlight: "#FFC870",
         label: "Carbs"
     }
 ];
 
+var barData = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: [28, 48, 40, 19, 86, 27, 90]
+        }
+    ]
+};
+
+
 //refactoring search api code
 //search yummly api
-var foodIdArray = [];
 var course = "";
 var date = new Date();
 
@@ -35,26 +58,47 @@ var time = date.getHours();
 var ctx = $("#chart-area")[0].getContext("2d");
 
 
+ctx.font="20px Georgia";
+ctx.fillText("Hello World!",10,50);
+
 window.myDoughnut = new Chart(ctx).Doughnut(data, {
-  responsive : true,
+  responsive : false,
   animateRotate: false,
   animateScale: false,
   percentageInnerCutout: 80,
-  animationEasing : "easeInOutQuart"
+  animationEasing : "easeInOutQuart",
+  labelColor : 'black',
+  labelFontSize : 24,
+  labelFontFamily : "Arial",
+  labelFontStyle : "normal",
+  labelFontColor : "black",
+  tooltipFontSize: 20,
 });
 
-$(".user-data").on("click",".taco", function(){
 
+$(".user-data").on("click",".food", function(){
 	var fat = $(this).find(".FAT").attr("data-fat");
 	var carbs = $(this).find(".CHOCDF").attr("data-carbs");
 	var protein = $(this).find(".PROCNT").attr("data-protein");
-	
-	myDoughnut.segments[0].value = fat;
-	myDoughnut.segments[1].value = protein;
-	myDoughnut.segments[2].value = carbs;
-
+	var calorie = $(this).find(".ENERC_KJ").attr("data-calories");
+	myDoughnut.segments[0].value = parseFloat(fat);
+	myDoughnut.segments[1].value = parseFloat(protein);
+	myDoughnut.segments[2].value = parseFloat(carbs);
+	$(".cal-caption").html("<p>"+calorie+"</p>");
+	$(".protein-caption span").html(parseInt(calorie));
 	myDoughnut.update();
 });
+
+// var $window = $(window),
+//        $stickyEl = $('.canvas-holder'),
+//        elTop = $stickyEl.offset().top;
+
+//    $window.scroll(function() {
+//         $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+//     });
+
+// $(".cal-caption").append("hellos");
+// $(".cal-caption").append("<p>"+calorie+"</p>");
 
 if (time >= 5 && time < 12){
 	course = "Breakfast and Brunch";
@@ -64,7 +108,7 @@ if (time >= 5 && time < 12){
 	$('.course-time').append("<h2> It's "+course+" time</h2>");
 } else if (time >=16 && time < 24) {
 	course = "Main Dishes";
-	$('.course-time').append("<h2> It's "+course+" time</h2>");
+	$('.course-time').append("<h2> It's Dinner time</h2>");
 } else {
 	$('.course-time').append("<h2> You should be asleep </h2>");
 }
@@ -88,6 +132,7 @@ function searchFood(search){
 			// "flavor.piquant.max": 0,
 			"nutrition.ENERC_KCAL.min": 100,
 			"nutrition.ENERC_KCAL.max": 300,
+			"nutrition.PROCNT.min": 1,
 			"requirePictures": true,
 			format: "json"
 		},
@@ -101,6 +146,7 @@ function searchFoodId(id){
 		dataType: "jsonp"
 	});
 }
+
 
 
 // function searchFoodId(search){
@@ -125,10 +171,10 @@ function searchFoodId(id){
 
 				result.matches.forEach(function (itm){
 
-						$.when(searchFoodId(itm.id)).done(function(data){ 
-				var compiledTemplate = HandlebarsTemplates['users/show']({result: data});
-				$(".user-data").append(compiledTemplate);
-						});
+					$.when(searchFoodId(itm.id)).done(function(data){ 
+						var compiledTemplate = HandlebarsTemplates['users/show']({result: data});
+						$(".user-data").append(compiledTemplate);
+					});
 				});
 				
 			}
