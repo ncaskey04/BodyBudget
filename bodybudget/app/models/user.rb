@@ -7,9 +7,6 @@ class User < ActiveRecord::Base
     consumer_key = ENV["FIT_BIT_KEY"]
     consumer_secret = ENV["FIT_BIT_SECRET"]
      
-
-    # client = Fitgem::Client.new({:consumer_key => consumer_key, :consumer_secret => consumer_secret})
-
     @client ||= Fitgem::Client.new(
               :consumer_key => consumer_key,
               :consumer_secret => consumer_secret,
