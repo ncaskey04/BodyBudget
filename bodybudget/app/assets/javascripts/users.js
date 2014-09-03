@@ -71,11 +71,12 @@ window.myDoughnut = new Chart(ctx).Doughnut(data, {
   labelFontSize : 24,
   labelFontFamily : "Arial",
   labelFontStyle : "normal",
-  labelFontColor : "black"
+  labelFontColor : "black",
+  tooltipFontSize: 20,
 });
 
 
-$(".user-data").on("mouseover",".food", function(){
+$(".user-data").on("click",".food", function(){
 	var fat = $(this).find(".FAT").attr("data-fat");
 	var carbs = $(this).find(".CHOCDF").attr("data-carbs");
 	var protein = $(this).find(".PROCNT").attr("data-protein");
@@ -84,7 +85,7 @@ $(".user-data").on("mouseover",".food", function(){
 	myDoughnut.segments[1].value = parseFloat(protein);
 	myDoughnut.segments[2].value = parseFloat(carbs);
 	$(".cal-caption").html("<p>"+calorie+"</p>");
-	$(".protein-caption span").html(protein)
+	$(".protein-caption span").html(parseInt(calorie));
 	myDoughnut.update();
 });
 
