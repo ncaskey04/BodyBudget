@@ -4,9 +4,3 @@
 
 // We need CalsIn, CalsOut, Steps, Recent Activities, and Daily Goals
 
-$(document).ready(function(){
-
-  var data = stuff;
-
-
-});
