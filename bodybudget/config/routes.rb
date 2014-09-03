@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'foods/new'
+
+  get 'foods/create'
+
+  get 'foods/delete'
+
   get 'fitbit/index'
 
   get 'fitbit/results'
