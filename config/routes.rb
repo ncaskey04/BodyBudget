@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sites/index'
+
+  get 'sites/show'
+
+  get 'sites/new'
+
   get 'foods/new'
 
   get 'foods/create'
@@ -10,9 +16,7 @@ Rails.application.routes.draw do
 
   get 'fitbit/results'
 
-  get '/about'
-
-  root to: 'users#index'
+ root to: 'users#index'
 
   get 'articles/index'
 

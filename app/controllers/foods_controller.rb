@@ -6,5 +6,5 @@ class FoodsController < ApplicationController
   end
 
   def delete
-  end
+end
 end
