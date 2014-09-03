@@ -2,6 +2,27 @@ class User < ActiveRecord::Base
   has_many :stats
   has_many :foods
 
+
+  def fitbit_data
+    consumer_key = ENV["FIT_BIT_KEY"]
+    consumer_secret = ENV["FIT_BIT_SECRET"]
+     
+
+    # client = Fitgem::Client.new({:consumer_key => consumer_key, :consumer_secret => consumer_secret})
+
+    @client ||= Fitgem::Client.new(
+              :consumer_key => consumer_key,
+              :consumer_secret => consumer_secret,
+              :token => self.token,
+              :secret => self.secret,
+              :user_id => self.uid
+            )
+
+    # ap @client.activities
+
+    # current_user.fitbit.activities
+  end
+
   def self.authenticate email, password
     User.find_by_email(email).try(:authenticate,password)
   end
@@ -20,6 +41,8 @@ class User < ActiveRecord::Base
       user.member_since = auth["info"]["member_since"]
       user.locale = auth["info"]["locale"]
       user.timezone = auth["info"]["timezone"]
+      user.token = auth["credentials"]["token"]
+      user.secret = auth["credentials"]["secret"]
     end
   end
 
