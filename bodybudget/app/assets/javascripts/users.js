@@ -62,7 +62,7 @@ ctx.font="20px Georgia";
 ctx.fillText("Hello World!",10,50);
 
 window.myDoughnut = new Chart(ctx).Doughnut(data, {
-  responsive : true,
+  responsive : false,
   animateRotate: false,
   animateScale: false,
   percentageInnerCutout: 80,
@@ -83,11 +83,20 @@ $(".user-data").on("mouseover",".food", function(){
 	myDoughnut.segments[0].value = parseFloat(fat);
 	myDoughnut.segments[1].value = parseFloat(protein);
 	myDoughnut.segments[2].value = parseFloat(carbs);
-	$(".cal-caption").append("<p>"+calorie+"</p>");
+	$(".cal-caption").html("<p>"+calorie+"</p>");
+	$(".protein-caption span").html(protein)
 	myDoughnut.update();
 });
 
-$(".cal-caption").append("hellos");
+// var $window = $(window),
+//        $stickyEl = $('.canvas-holder'),
+//        elTop = $stickyEl.offset().top;
+
+//    $window.scroll(function() {
+//         $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
+//     });
+
+// $(".cal-caption").append("hellos");
 // $(".cal-caption").append("<p>"+calorie+"</p>");
 
 if (time >= 5 && time < 12){
@@ -122,6 +131,7 @@ function searchFood(search){
 			// "flavor.piquant.max": 0,
 			"nutrition.ENERC_KCAL.min": 100,
 			"nutrition.ENERC_KCAL.max": 300,
+			"nutrition.PROCNT.min": 1,
 			"requirePictures": true,
 			format: "json"
 		},

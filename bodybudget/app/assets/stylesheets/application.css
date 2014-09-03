@@ -36,15 +36,23 @@
 	margin-bottom: 1em;
 }
 
+@media (min-width: 1200px){
+#fixed-container{
+	  position: fixed;
+	  width: 33%;
+	  right: 175px;
+	  top: 0px;
+	}
+}
 .canvas-holder {
 	margin-top: 20em;
-
+	height: 600px;
 }
 
 .cal-caption {
     font-family: Lato,sans-serif;
     color: #222;
-    font-size: 24px;
+    font-size: 55px;
     font-weight: 600;
     position: absolute;
     top: 0;
@@ -68,11 +76,11 @@
     /*width: 100%;*/
     height: 100%;
     text-align: center;
-    line-height: 390px;
+    line-height: 300px;
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
-    width: 200px;
+    width: 100px;
   }
 
   .protein-caption {
@@ -89,7 +97,8 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
-    width: 1075px;
+    width: 40px;
+	right: 20px;
   }
 
   .fat-caption {
@@ -102,7 +111,7 @@
     /*width: 100%;*/
     height: 100%;
     text-align: center;
-    line-height: 800px;
+    line-height: 830px;
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
