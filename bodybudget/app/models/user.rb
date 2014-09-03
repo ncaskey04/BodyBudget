@@ -1,42 +1,25 @@
 class User < ActiveRecord::Base
   has_many :stats
   has_many :foods
-  has_many :authorizations
-
-  has_secure_password
-
-  validates :first_name,
-            :presence => true,
-            :length => {:minimum => 2}
-
-  validates :last_name,
-            :presence => true,
-            :length => {:minimum => 2}
-
-  validates :email,
-            :presence => true,
-            :format => {with: /\A([\w-]|\.)+@([\w-]|\.)+\.[a-z]{2,3}\z/i},
-            :uniqueness => {case_sensitive: false}
-
-  # validates :password,
-  #           :presence => true,
-  #           :length => {:minimum => 6}, on: :create
 
   def self.authenticate email, password
     User.find_by_email(email).try(:authenticate,password)
   end
 
-  def set_password_reset
-    # puts self.inspect
-    self.code = SecureRandom.urlsafe_base64
-    self.expires_at = 4.hours.from_now
-    self.save!(validate: false)
-  end
-
-  def add_provider(auth_hash)
-    # Check if the provider already exists, so we don't add it twice
-    unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
-      Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.full_name = auth["info"]["full_name"]
+      user.gender = auth["info"]["gender"]
+      user.about_me = auth["info"]["about_me"]
+      user.city = auth["info"]["city"]
+      user.state = auth["info"]["state"]
+      user.country = auth["info"]["country"]
+      user.dob = auth["info"]["dob"]
+      user.member_since = auth["info"]["member_since"]
+      user.locale = auth["info"]["locale"]
+      user.timezone = auth["info"]["timezone"]
     end
   end
 

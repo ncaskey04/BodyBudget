@@ -8,20 +8,20 @@ $(document).ready(function() {
         value: 30,
         color:"#F7464A",
         highlight: "#FF5A5E",
-        label: "Red"
+        label: "Protein"
     },
     {
         value: 30,  
         color: "#46BFBD",
         highlight: "#5AD3D1",
-        label: "Green"
+        label: "Fat"
     },
     {
         value: 30,
         color: "#FDB45C",
         opacity: 30,
         highlight: "#FFC870",
-        label: "Yellow"
+        label: "Carbs"
     }
 ];
 
@@ -30,8 +30,31 @@ $(document).ready(function() {
 var foodIdArray = [];
 var course = "";
 var date = new Date();
-var time = date.getHours();
 
+var time = date.getHours();
+var ctx = $("#chart-area")[0].getContext("2d");
+
+
+window.myDoughnut = new Chart(ctx).Doughnut(data, {
+  responsive : true,
+  animateRotate: false,
+  animateScale: false,
+  percentageInnerCutout: 80,
+  animationEasing : "easeInOutQuart"
+});
+
+$(".user-data").on("click",".taco", function(){
+
+	var fat = $(this).find(".FAT").attr("data-fat");
+	var carbs = $(this).find(".CHOCDF").attr("data-carbs");
+	var protein = $(this).find(".PROCNT").attr("data-protein");
+	
+	myDoughnut.segments[0].value = fat;
+	myDoughnut.segments[1].value = protein;
+	myDoughnut.segments[2].value = carbs;
+
+	myDoughnut.update();
+});
 
 if (time >= 5 && time < 12){
 	course = "Breakfast and Brunch";
@@ -41,10 +64,12 @@ if (time >= 5 && time < 12){
 	$('.course-time').append("<h2> It's "+course+" time</h2>");
 } else if (time >=16 && time < 24) {
 	course = "Main Dishes";
-	('.course-time').append("<h2> It's "+course+" time</h2>");
+	$('.course-time').append("<h2> It's "+course+" time</h2>");
 } else {
 	$('.course-time').append("<h2> You should be asleep </h2>");
 }
+
+
 
 function searchFood(search){
 	return $.ajax({ 
@@ -62,39 +87,54 @@ function searchFood(search){
 			// "flavor.piquant.min": 0,
 			// "flavor.piquant.max": 0,
 			"nutrition.ENERC_KCAL.min": 100,
-			"nutrition.ENERC_KCAL.min": 300,
-			"requirePictures": "true",
+			"nutrition.ENERC_KCAL.max": 300,
+			"requirePictures": true,
 			format: "json"
 		},
 		dataType: "jsonp"
 	});
 }
 
+function searchFoodId(id){
+	return $.ajax({
+		url: "http://api.yummly.com/v1/api/recipe/"+id+"?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9",
+		dataType: "jsonp"
+	});
+}
+
+
 // function searchFoodId(search){
 // 	return $.getJSON(//api.yummly.com/v1/api/recipe/recipe-id?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY
 // }
+
 
 	$(".getInfo").on('submit', function(e){
 		e.preventDefault();
 		$(".user-data").html("");
 		var recipe = $('.recipeName').val();
-
+	
 		//defered promise
 		$.when(searchFood(recipe)).done(function(result){
-			$('.user-data').html("");
-			console.log(result)
 			if(result.matches.length === 0){
 				$('.user-data').append("<h2>Sorry nothing came up!</h2>");
 			} else {
+			
+			}
+			$('.user-data').html("");
+				// console.log(result);
+
 				result.matches.forEach(function (itm){
 
-					// $(".user-data").append("<img src="itm. "/>")
-					$(".user-data").append("<p>"+itm.id+"</p>")
-				})
+						$.when(searchFoodId(itm.id)).done(function(data){ 
+				var compiledTemplate = HandlebarsTemplates['users/show']({result: data});
+				$(".user-data").append(compiledTemplate);
+						});
+				});
+				
 			}
+		);
 		});
 	});
-});
 
 
 
