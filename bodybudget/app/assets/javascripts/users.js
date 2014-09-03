@@ -102,13 +102,13 @@ $(".user-data").on("click",".food", function(){
 
 if (time >= 5 && time < 12){
 	course = "Breakfast and Brunch";
-	$('.course-time').append("<h2> It's "+course+" time</h2>");
+	$('.course-time').append("<h2>"+course+" time</h2>");
 } else if (time >= 12 && time < 16){
 	course = "Lunch";
-	$('.course-time').append("<h2> It's "+course+" time</h2>");
+	$('.course-time').append("<h2>"+course+" time</h2>");
 } else if (time >=16 && time < 24) {
 	course = "Main Dishes";
-	$('.course-time').append("<h2> It's Dinner time</h2>");
+	$('.course-time').append("<h2> Dinner time</h2>");
 } else {
 	$('.course-time').append("<h2> You should be asleep </h2>");
 }
