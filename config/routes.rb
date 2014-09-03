@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'fitbit/results'
 
+  get '/about'
+
   root to: 'users#index'
 
   get 'articles/index'
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   get '/login', :to => 'sessions#new', :as => :login
   get '/auth/:provider/callback', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'
+
 
   resources :users
 
