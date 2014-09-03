@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require handlebars.runtime
 //= require_tree ./templates
-//= require chart.min.js
+//= require chart.js
 //= require users.js
 
 Handlebars.registerHelper('ifCond', function(v1, v2, options) {

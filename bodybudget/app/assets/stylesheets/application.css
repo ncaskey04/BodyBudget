@@ -14,3 +14,97 @@
  *= require_self
  *= require "bootstrap.min"
  */
+
+.header{
+	font-family: 
+}
+
+.thumb-ht {
+	height: 425px;
+}
+
+.grey {
+	height: 2450px;
+	background-color: #ecf0f1;
+}
+
+.margin-top {
+	margin-top: 1em;
+}
+
+.margin-bottom {
+	margin-bottom: 1em;
+}
+
+.canvas-holder {
+	margin-top: 20em;
+
+}
+
+.cal-caption {
+    font-family: Lato,sans-serif;
+    color: #222;
+    font-size: 24px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 390px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 585px;
+  }
+
+  .carb-caption {
+    font-family: Lato,sans-serif;
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 390px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 200px;
+  }
+
+  .protein-caption {
+    font-family: Lato,sans-serif;
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 390px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 1000px;
+  }
+
+  .fat-caption {
+    font-family: Lato,sans-serif;
+    color: #222;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    /*width: 100%;*/
+    height: 100%;
+    text-align: center;
+    line-height: 800px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 585px;
+  }
