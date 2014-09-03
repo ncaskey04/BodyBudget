@@ -130,8 +130,8 @@ function searchFood(search){
 			// "flavor.sweet.max": 0,
 			// "flavor.piquant.min": 0,
 			// "flavor.piquant.max": 0,
-			"nutrition.ENERC_KCAL.min": 100,
-			"nutrition.ENERC_KCAL.max": 300,
+			// "nutrition.ENERC_KCAL.min": 100,
+			// "nutrition.ENERC_KCAL.max": 300,
 			"nutrition.PROCNT.min": 1,
 			"requirePictures": true,
 			format: "json"
