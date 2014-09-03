@@ -10,9 +10,7 @@ Rails.application.routes.draw do
 
   get 'fitbit/results'
 
-  get '/about'
-
-  root to: 'users#index'
+ root to: 'users#index'
 
   get 'articles/index'
 
