@@ -27,25 +27,17 @@ $(document).ready(function() {
 ];
 
 var barData = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-        {
-            label: "My First dataset",
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
-            highlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
-        },
-        {
-            label: "My Second dataset",
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,0.8)",
-            highlightFill: "rgba(151,187,205,0.75)",
-            highlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
-        }
-    ]
+   labels: ["Current Cal.", "Calorie In", "Calorie Out"],
+   datasets: [
+     	{
+         label: "My First dataset",
+         fillColor: "rgba(220,220,220,0.5)",
+         strokeColor: "rgba(220,220,220,0.8)",
+         highlightFill: "rgba(220,220,220,0.75)",
+         highlightStroke: "rgba(220,220,220,1)",
+         data: [65, 59, 80]
+     	},
+   ]
 };
 
 
@@ -56,10 +48,8 @@ var date = new Date();
 
 var time = date.getHours();
 var ctx = $("#chart-area")[0].getContext("2d");
+var ctz = $("#bar-chart")[0].getContext("2d");
 
-
-ctx.font="20px Georgia";
-ctx.fillText("Hello World!",10,50);
 
 window.myDoughnut = new Chart(ctx).Doughnut(data, {
   responsive : false,
@@ -75,6 +65,7 @@ window.myDoughnut = new Chart(ctx).Doughnut(data, {
   tooltipFontSize: 20,
 });
 
+var myBarChart = new Chart(ctz).Bar(barData);
 
 $(".user-data").on("click",".food", function(){
 	var fat = $(this).find(".FAT").attr("data-fat");
@@ -89,16 +80,8 @@ $(".user-data").on("click",".food", function(){
 	myDoughnut.update();
 });
 
-// var $window = $(window),
-//        $stickyEl = $('.canvas-holder'),
-//        elTop = $stickyEl.offset().top;
 
-//    $window.scroll(function() {
-//         $stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
-//     });
 
-// $(".cal-caption").append("hellos");
-// $(".cal-caption").append("<p>"+calorie+"</p>");
 
 if (time >= 5 && time < 12){
 	course = "Breakfast and Brunch";
