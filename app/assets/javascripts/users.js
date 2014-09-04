@@ -19,12 +19,17 @@ var calsInResult = parseInt(gon.calsIn["foods-log-caloriesIn"][0].value);
 var calsOutResult = parseInt(gon.calsOut["activities-tracker-calories"][0].value);
 var stepsResult = gon.steps;
 
+var netCal = calsInResult - calsOutResult;
+
 var yummlyId = gon.yummlyId;
 var yummlyKey = gon.yummlyKey;
+var projectedCal = netCal;
 
-console.log(yummlyId)
-
-console.log(gon.miles)
+foodResult.forEach(function(food){
+    // food.value
+    console.log(food.name);
+    $(".food").append("<li>"+food.name+"</li>");
+});
 
 
   var data = [
@@ -51,32 +56,24 @@ console.log(gon.miles)
 ];
 
 var barData = {
-   labels: ["Current Cal.", "Calorie In", "Calorie Out"],
+   labels: ["Projected Cal", "Current Cal.", "Calorie In", "Calorie Out"],
    datasets: [
      	{
-         label: "My First dataset",
+         label: "Calories",
          fillColor: "#46BFBD",
-         // strokeColor: "rgba(220,220,220,0.8)",
-         highlightFill: ["blue", "red", "green"],
-         // highlightStroke: "rgba(220,220,220,1)",
-         data: [2000 ,calsInResult, calsOutResult]
+         strokeColor: "rgba(220,220,220,0.8)",
+         highlightFill: "rgba(220,220,220,1)",
+         highlightStroke: "rgba(220,220,220,1)",
+         data: [0, netCal ,calsInResult, calsOutResult]
      	},
-     	// {
-      //    label: "My First dataset",
-      //    fillColor: "red",
-      //    // strokeColor: "rgba(220,220,220,0.8)",
-      //    // highlightFill: "rgba(220,220,220,0.75)",
-      //    // highlightStroke: "rgba(220,220,220,1)",
-      //    data: [60, 60, 0]
-     	// },
-     	// {
-      //    label: "My First dataset",
-      //    fillColor: "#46BFBD",
-      //    // strokeColor: "rgba(220,220,220,0.8)",
-      //    // highlightFill: "rgba(220,220,220,0.75)",
-      //    // highlightStroke: "rgba(220,220,220,1)",
-      //    data: [0, 60, 0]
-     	// }
+     	{
+         label: "My First dataset",
+         fillColor: "red",
+         strokeColor: "rgba(220,220,220,0.8)",
+         highlightFill: "rgba(220,220,220,0.75)",
+         highlightStroke: "rgba(220,220,220,1)",
+         data: [projectedCal, 0, 0, 0]
+     	}
    ]
 };
 
@@ -96,7 +93,7 @@ window.myDoughnut = new Chart(ctx).Doughnut(data, {
   tooltipFontSize: 20,
 });
 
-var myBarChart = new Chart(ctz).Bar(barData, {
+window.myBarChart = new Chart(ctz).Bar(barData, {
     //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
     scaleBeginAtZero : true,
 
@@ -141,9 +138,11 @@ $(".user-data").on("click",".food", function(){
             refreshInterval: 50 });
 	$(".protein-caption span").html(parseInt(calorie));
 	myDoughnut.update();
+    projectedCal = netCal + parseInt(calorie);
+    console.log("myBarChart.datasets", myBarChart.datasets)
+    myBarChart.datasets[1].bars[0].value = projectedCal;
+    myBarChart.update();
 });
-
-
 
 
 if (time >= 5 && time < 12){

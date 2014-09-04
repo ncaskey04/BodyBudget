@@ -15,13 +15,12 @@
 
  */
 
-
 .red-band {
  background-color: #F7464A;
  height: 25px;
  top: -2em;
  left: -2em;
- width: 1170px;
+ width: 105%;
  position: relative;
  border-top-left-radius: 20px;
  border-top-right-radius: 20px;
@@ -68,6 +67,15 @@
     border-radius: 20px;
 }
 
+.grey-box {
+    background-color: #ecf0f1;
+    z-index: 0;
+    position: relative;
+    height: 400px;
+    padding: 2em;
+    border-radius: 20px;
+}
+
 .border-white {
     border-style: solid;
     border-color: white;
@@ -81,6 +89,10 @@
 	margin-top: -1em;
 }
 
+.margin-top-small {
+    margin-top: -.5em;
+}
+
 .margin-bottom {
 	margin-bottom: 1em;
 }
@@ -88,9 +100,6 @@
 @media (min-width: 768px){
 #fixed-container{
 	  position: fixed;
-	  width: 33%;
-	  right: 155px;
-	  top: 0px;
 	}
 }
 .canvas-holder {
@@ -102,39 +111,40 @@
 }
 
 .cal-caption {
-    font-family: Lato,sans-serif;
+    font-family: 'Wire One', sans-serif;
     color: black;
     opacity: 20;
-    font-size: 55px;
+    font-size: 75px;
     font-weight: 600;
-    position: absolute;
+    position: relative;
     top: 0;
     /*width: 100%;*/
     height: 100%;
     text-align: center;
-    line-height: 400px;
+    top: -200px;
+    line-height: 2px;
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
-    width: 399px;
+    width: 0 auto;
     z-index: -1;
   }
 
 .cal-title {
-    font-family: Lato,sans-serif;
+    font-family: 'Wire One', sans-serif;
     color: black;
     opacity: 20;
     font-size: 40px;
     font-weight: 600;
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: -150px;
     /*width: 100%;*/
     height: 100%;
     text-align: center;
-    line-height: 500px;
+    line-height: 2px;
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
-    width: 400px;
+    width: 0 auto;
     z-index: -1;
   }
