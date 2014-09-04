@@ -87,6 +87,10 @@
 	margin-top: 2em;
 }
 
+.margin-right{
+   margin-right: 1em; 
+}
+
 .cal-caption {
     font-family: Lato,sans-serif;
     color: black;

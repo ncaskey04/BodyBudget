@@ -19,6 +19,11 @@ var calsInResult = parseInt(gon.calsIn["foods-log-caloriesIn"][0].value);
 var calsOutResult = parseInt(gon.calsOut["activities-tracker-calories"][0].value);
 var stepsResult = gon.steps;
 
+var yummlyId = gon.yummlyId;
+var yummlyKey = gon.yummlyKey;
+
+console.log(yummlyId)
+
 console.log(gon.miles)
 
 
@@ -158,7 +163,7 @@ if (time >= 5 && time < 12){
 
 function searchFood(search){
 	return $.ajax({ 
-		url: "http://api.yummly.com/v1/api/recipes?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9&q="+search,
+		url: "http://api.yummly.com/v1/api/recipes?_app_id="+yummlyId+"&_app_key="+yummlyKey+"&q="+search,
 		data: {
 			'maxResult': 12,
 			"rating": 5,
@@ -183,7 +188,7 @@ function searchFood(search){
 
 function searchFoodId(id){
 	return $.ajax({
-		url: "http://api.yummly.com/v1/api/recipe/"+id+"?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9",
+		url: "http://api.yummly.com/v1/api/recipe/"+id+"?_app_id="+yummlyId+"&_app_key="+yummlyKey,
 		dataType: "jsonp"
 	});
 }
