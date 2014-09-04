@@ -50,8 +50,8 @@ gem 'awesome_print'
 # handlebars template stuff
 gem 'handlebars_assets'
 
-# typhoeus for handling JSON requests
-gem 'typhoeus'
+# use gon to use controller info in JS
+gem 'gon'
 
 group :development do
   gem 'pry'
