@@ -18,10 +18,10 @@
 // FITBIT API INFO
 
 Client (Consumer) Key
-959e020d204549509cdbaaa5f5e21c2b
+d4464fb6e7bf4d51a4c201734864aaec
 
 Client (Consumer) Secret
-52b465fa0a694a908bf3593bbd3fd365
+6c0a4d78593c42c5a9add545b74b54eb
 
 Temporary Credentials (Request Token) URL
 https://api.fitbit.com/oauth/request_token
@@ -37,8 +37,8 @@ https://www.fitbit.com/oauth/authorize
 
 // YUMMLY API INFO
 
-Application ID: 537f89a1
-Application Key: eb90b638af81321b1fefb69bc52fc48b
+Application ID: a900cf96
+Application Key: f97fcae4c6889603ad8efcfac7aa101d
 
 testUrl: http://api.yummly.com/v1/api/recipes?_app_id=537f89a1&_app_key=eb90b638af81321b1fefb69bc52fc48b&q=onion+soup&requirePictures=true
 
