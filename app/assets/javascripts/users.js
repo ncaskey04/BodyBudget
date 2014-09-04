@@ -2,7 +2,31 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function() {
-  
+    
+var course = "";
+var date = new Date();
+var timeNow = date.getHours()+":"+date.getMinutes()
+
+var time = date.getHours();
+var ctx = $("#chart-area")[0].getContext("2d");
+var ctz = $("#bar-chart")[0].getContext("2d");
+var foodResults = gon.results_food;
+
+
+var milesResult = gon.miles;
+var foodResult = gon.food;
+var calsInResult = parseInt(gon.calsIn["foods-log-caloriesIn"][0].value);
+var calsOutResult = parseInt(gon.calsOut["activities-tracker-calories"][0].value);
+var stepsResult = gon.steps;
+
+var yummlyId = gon.yummlyId;
+var yummlyKey = gon.yummlyKey;
+
+console.log(yummlyId)
+
+console.log(gon.miles)
+
+
   var data = [
     {
         value: 30,
@@ -35,7 +59,7 @@ var barData = {
          // strokeColor: "rgba(220,220,220,0.8)",
          highlightFill: ["blue", "red", "green"],
          // highlightStroke: "rgba(220,220,220,1)",
-         data: [60 ,60, 0]
+         data: [2000 ,calsInResult, calsOutResult]
      	},
      	// {
       //    label: "My First dataset",
@@ -56,21 +80,7 @@ var barData = {
    ]
 };
 
-
-//refactoring search api code
-//search yummly api
-var course = "";
-var date = new Date();
-
-var time = date.getHours();
-var ctx = $("#chart-area")[0].getContext("2d");
-var ctz = $("#bar-chart")[0].getContext("2d");
-var foodResults = gon.results_food;
-
-var foodResult = gon.miles;
-
-console.log(foodResult);
-
+$('.time-now').append("<p>TIME: "+timeNow+"</p >");
 
 window.myDoughnut = new Chart(ctx).Doughnut(data, {
   responsive : false,
@@ -138,22 +148,22 @@ $(".user-data").on("click",".food", function(){
 
 if (time >= 5 && time < 12){
 	course = "Breakfast and Brunch";
-	$('.course-time').append("<h2>"+course+" time</h2>");
+	$('.course-time').append("<p>TIME: "+timeNow+" "+course+" time</p>");
 } else if (time >= 12 && time < 16){
 	course = "Lunch";
-	$('.course-time').append("<h2>"+course+" time</h2>");
+	$('.course-time').append("<p>TIME: "+timeNow+" "+course+" time</p>");
 } else if (time >=16 && time < 24) {
 	course = "Main Dishes";
-	$('.course-time').append("<h2> Dinner time</h2>");
+	$('.course-time').append("<p>TIME: "+timeNow+" Dinner time</p>");
 } else {
-	$('.course-time').append("<h2> You should be asleep </h2>");
+	$('.course-time').append("<p>TIME: "+timeNow+" You should be asleep </p>");
 }
 
 
 
 function searchFood(search){
 	return $.ajax({ 
-		url: "http://api.yummly.com/v1/api/recipes?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9&q="+search,
+		url: "http://api.yummly.com/v1/api/recipes?_app_id="+yummlyId+"&_app_key="+yummlyKey+"&q="+search,
 		data: {
 			'maxResult': 12,
 			"rating": 5,
@@ -178,7 +188,7 @@ function searchFood(search){
 
 function searchFoodId(id){
 	return $.ajax({
-		url: "http://api.yummly.com/v1/api/recipe/"+id+"?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9",
+		url: "http://api.yummly.com/v1/api/recipe/"+id+"?_app_id="+yummlyId+"&_app_key="+yummlyKey,
 		dataType: "jsonp"
 	});
 }
