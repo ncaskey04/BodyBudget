@@ -67,9 +67,7 @@ var ctx = $("#chart-area")[0].getContext("2d");
 var ctz = $("#bar-chart")[0].getContext("2d");
 var foodResults = gon.results_food;
 
-puts(foodResults);
-
-var foodResult = gon.miles
+var foodResult = gon.miles;
 
 console.log(foodResult);
 

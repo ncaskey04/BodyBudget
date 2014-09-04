@@ -11,6 +11,7 @@ class UsersController < ApplicationController
      gon.calsOut = @current_user.fitbit.data_by_time_range("/activities/tracker/calories", {:base_date => DateTime.now.strftime('%Y-%m-%d'), :period => "1d"})
      gon.miles = @current_user.fitbit.data_by_time_range("/activities/tracker/distance", {:base_date => DateTime.now.strftime('%Y-%m-%d'), :period => "1d"})
      gon.steps = @current_user.fitbit.data_by_time_range("/activities/tracker/steps", {:base_date => DateTime.now.strftime('%Y-%m-%d'), :period => "1d"})
+     
   end
 
   def new
