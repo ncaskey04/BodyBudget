@@ -209,7 +209,7 @@ function searchFoodId(id){
 
 
 					$.when(searchFoodId(itm.id)).done(function(data){ 
-						console.log(data)
+						console.log(data);
 						var compiledTemplate = HandlebarsTemplates['users/show']({result: data, taco: result});
 						$(".user-data").append(compiledTemplate);
 					});
