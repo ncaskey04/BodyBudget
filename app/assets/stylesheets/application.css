@@ -67,8 +67,17 @@
     border-radius: 20px;
 }
 
+.border-white {
+    border-style: solid;
+    border-color: white;       
+}
+
 .margin-top {
-	margin-top: 1em;
+    margin-top: 1em;
+}
+
+.margin-top-negative {
+	margin-top: -1em;
 }
 
 .margin-bottom {
