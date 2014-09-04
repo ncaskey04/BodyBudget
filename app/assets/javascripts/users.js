@@ -18,7 +18,7 @@ var foodResult = gon.food;
 var calsInResult = parseInt(gon.calsIn["foods-log-caloriesIn"][0].value);
 var calsOutResult = parseInt(gon.calsOut["activities-tracker-calories"][0].value);
 var stepsResult = gon.steps;
-
+var calGoal = gon.calGoal["goals"]["caloriesOut"];
 var netCal = calsInResult - calsOutResult;
 
 var yummlyId = gon.yummlyId;
@@ -27,8 +27,7 @@ var projectedCal = netCal;
 
 foodResult.forEach(function(food){
     // food.value
-    console.log(food.name);
-    $(".food").append("<li>"+food.name+"</li>");
+        $(".food").append("<li>"+food.name+"</li>");
 });
 
 
