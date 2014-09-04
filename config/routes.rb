@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'sites/index'
+
+  get 'sites/show'
+
+  get 'sites/new'
+
   get 'foods/new'
 
   post 'foods/create'
