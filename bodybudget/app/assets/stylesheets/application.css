@@ -15,6 +15,11 @@
  *= require "bootstrap.min"
  */
 
+.bowl {
+    margin-top: 3em;
+    width: 100%;
+}
+
 .header{
 	font-family: 
 }
@@ -24,8 +29,10 @@
 }
 
 .grey {
-	height: 2450px;
 	background-color: #ecf0f1;
+    z-index: 0;
+    position: relative;
+    width: 100%
 }
 
 .margin-top {
@@ -50,7 +57,7 @@
 
 .cal-caption {
     font-family: Lato,sans-serif;
-    color: #7f8c8d;
+    color: black
     opacity: 20;
     font-size: 55px;
     font-weight: 600;
@@ -69,7 +76,7 @@
 
 .cal-title {
     font-family: Lato,sans-serif;
-    color: #7f8c8d;
+    color: black;
     opacity: 20;
     font-size: 40px;
     font-weight: 600;
