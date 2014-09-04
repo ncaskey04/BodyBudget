@@ -10,12 +10,9 @@ class UsersController < ApplicationController
     gon.calsOut = @current_user.fitbit.data_by_time_range("/activities/tracker/calories",{:base_date => "2014-09-03",:period => "1d"})
     gon.miles = @current_user.fitbit.data_by_time_range("/activities/tracker/distance",{:base_date => "2014-09-03",:period => "1d"})
     gon.steps = @current_user.fitbit.data_by_time_range("/activities/tracker/steps",{:base_date => "2014-09-03",:period => "1d"})
-
   end
 
   def new
-    @results_food = 10
-    gon.results_food = @results_food
   end
 
   def create

@@ -37,22 +37,22 @@ var barData = {
          // highlightStroke: "rgba(220,220,220,1)",
          data: [60 ,60, 0]
      	},
-     	{
-         label: "My First dataset",
-         fillColor: "red",
-         // strokeColor: "rgba(220,220,220,0.8)",
-         // highlightFill: "rgba(220,220,220,0.75)",
-         // highlightStroke: "rgba(220,220,220,1)",
-         data: [60, 60, 0]
-     	},
-     	{
-         label: "My First dataset",
-         fillColor: "#46BFBD",
-         // strokeColor: "rgba(220,220,220,0.8)",
-         // highlightFill: "rgba(220,220,220,0.75)",
-         // highlightStroke: "rgba(220,220,220,1)",
-         data: [0, 60, 0]
-     	}
+     	// {
+      //    label: "My First dataset",
+      //    fillColor: "red",
+      //    // strokeColor: "rgba(220,220,220,0.8)",
+      //    // highlightFill: "rgba(220,220,220,0.75)",
+      //    // highlightStroke: "rgba(220,220,220,1)",
+      //    data: [60, 60, 0]
+     	// },
+     	// {
+      //    label: "My First dataset",
+      //    fillColor: "#46BFBD",
+      //    // strokeColor: "rgba(220,220,220,0.8)",
+      //    // highlightFill: "rgba(220,220,220,0.75)",
+      //    // highlightStroke: "rgba(220,220,220,1)",
+      //    data: [0, 60, 0]
+     	// }
    ]
 };
 
@@ -108,7 +108,7 @@ var myBarChart = new Chart(ctz).Bar(barData, {
     barStrokeWidth : 1,
 
     //Number - Spacing between each of the X value sets
-    barValueSpacing : 10,
+    barValueSpacing : 1,
 
     //Number - Spacing between data sets within X values
     barDatasetSpacing : 1,
