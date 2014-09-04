@@ -15,6 +15,17 @@
  *= require "bootstrap.min"
  */
 
+.band {
+ background-color: #F7464A;
+ height: 25px;
+ top: -2em;
+ left: -2em;
+ width: 1170px;
+ position: relative;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+}
+
 .bowl {
     margin-top: 3em;
 }
@@ -31,6 +42,10 @@
 	background-color: #ecf0f1;
     z-index: 0;
     position: relative;
+    height: 100%;
+    padding: 2em; 
+    border-radius: 20px 
+
 }
 
 .margin-top {
