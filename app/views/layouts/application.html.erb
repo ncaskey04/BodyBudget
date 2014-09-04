@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Bodybudget</title>
-	
+
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300' rel='stylesheet' type='text/css'>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	
+
 	<%= render partial: "shared/navbar_grey" %>
 
 	<div class="container">
@@ -21,6 +21,17 @@
 
 <%= yield %>
 
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-md-8">
+               		 <p class="pull-right"><a href="#">Back to top</a></p>
+                    <p>Copyright &copy; Body Budget 2014</p>
+                </div>
+                <!-- /.col-md-8 -->
+            </div>
+            <!-- /.row -->
+        </footer>
 <!-- <script src="Chart.js"></script> -->
 	</div>
 </body>
