@@ -16,6 +16,14 @@ ActiveRecord::Schema.define(version: 20140903171837) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "authorizations", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "foods", force: true do |t|
     t.string   "recipe_name"
     t.string   "recipe_id"
