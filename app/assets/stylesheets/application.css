@@ -15,7 +15,7 @@
  *= require "bootstrap.min"
  */
 
-.band {
+.red-band {
  background-color: #F7464A;
  height: 25px;
  top: -2em;
@@ -24,6 +24,26 @@
  position: relative;
  border-top-left-radius: 20px;
  border-top-right-radius: 20px;
+}
+
+/*.border-right{
+    border-style: solid;
+    border-right: white;
+}*/
+.six-caps{
+    font-family: 'Six Caps', sans-serif;
+    font-size: 60px;
+}
+
+.wire-one {
+    font-family: 'Wire One', sans-serif;
+    font-size: 55px;
+}
+
+.wire-one-large p{
+    font-family: 'Wire One', sans-serif;
+    font-size: 60px;
+    margin: 0;
 }
 
 .bowl {
@@ -43,9 +63,8 @@
     z-index: 0;
     position: relative;
     height: 100%;
-    padding: 2em;
-    border-radius: 20px
-
+    padding: 2em; 
+    border-radius: 20px;
 }
 
 .margin-top {
