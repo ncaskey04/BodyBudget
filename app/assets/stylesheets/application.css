@@ -15,7 +15,7 @@
  *= require "bootstrap.min"
  */
 
-.band {
+.red-band {
  background-color: #F7464A;
  height: 25px;
  top: -2em;
@@ -24,6 +24,10 @@
  position: relative;
  border-top-left-radius: 20px;
  border-top-right-radius: 20px;
+}
+
+.sixcaps {
+
 }
 
 .bowl {
