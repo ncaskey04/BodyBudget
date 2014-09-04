@@ -123,7 +123,11 @@ $(".user-data").on("click",".food", function(){
 	myDoughnut.segments[0].value = parseFloat(fat);
 	myDoughnut.segments[1].value = parseFloat(protein);
 	myDoughnut.segments[2].value = parseFloat(carbs);
-	$(".cal-caption").html("<p>"+calorie+"</p>");
+	$(".cal-caption").html("<p>"+calorie+"</p>").countTo({
+            from: 0, 
+            to: calorie, 
+            speed: 1000,
+            refreshInterval: 50 });
 	$(".protein-caption span").html(parseInt(calorie));
 	myDoughnut.update();
 });
