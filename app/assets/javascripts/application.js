@@ -15,6 +15,7 @@
 //= require handlebars.runtime
 //= require_tree ./templates
 //= require chart.js
+//= require jquery.countTo.js
 //= require users.js
 
 Handlebars.registerHelper('ifCond', function(v1, v2, options) {
