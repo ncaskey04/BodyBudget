@@ -12,8 +12,9 @@
  *
  *= require_tree .
  *= require_self
- *= require "bootstrap.min"
+
  */
+
 
 .red-band {
  background-color: #F7464A;
@@ -63,13 +64,13 @@
     z-index: 0;
     position: relative;
     height: 100%;
-    padding: 2em; 
+    padding: 2em;
     border-radius: 20px;
 }
 
 .border-white {
     border-style: solid;
-    border-color: white;       
+    border-color: white;
 }
 
 .margin-top {
@@ -97,7 +98,7 @@
 }
 
 .margin-right{
-   margin-right: 1em; 
+   margin-right: 1em;
 }
 
 .cal-caption {
