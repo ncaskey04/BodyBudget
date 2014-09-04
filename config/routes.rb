@@ -1,22 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'sites/index'
-
-  get 'sites/show'
-
-  get 'sites/new'
-
   get 'foods/new'
 
-  get 'foods/create'
+  post 'foods/create'
 
-  get 'foods/delete'
+  delete 'foods/delete'
 
-  get 'fitbit/index'
+  get 'foods/index'
 
-  get 'fitbit/results'
+  get 'foods/:id', to: 'foods#show'
 
- root to: 'users#index'
+  root to: 'users#index'
 
   get 'articles/index'
 
@@ -24,7 +18,9 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', :to => 'sessions#create'
   get '/logout', :to => 'sessions#destroy'
 
-
   resources :users
+  resources :fitbit
+  get 'fitbit/results'
+
 
 end
