@@ -66,9 +66,9 @@ var time = date.getHours();
 var ctx = $("#chart-area")[0].getContext("2d");
 var ctz = $("#bar-chart")[0].getContext("2d");
 
-var foodResult = gon.miles
+var milesResult = gon.miles
 
-console.log(foodResult);
+console.log(milesResult);
 
 
 window.myDoughnut = new Chart(ctx).Doughnut(data, {
