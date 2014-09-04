@@ -15,9 +15,6 @@ class User < ActiveRecord::Base
               :user_id => self.uid
             )
 
-    # ap @client.activities
-
-    # current_user.fitbit.activities
   end
 
   def self.authenticate email, password
