@@ -154,8 +154,10 @@ function searchFoodId(id){
 
 				result.matches.forEach(function (itm){
 
+
 					$.when(searchFoodId(itm.id)).done(function(data){ 
-						var compiledTemplate = HandlebarsTemplates['users/show']({result: data});
+						console.log(data)
+						var compiledTemplate = HandlebarsTemplates['users/show']({result: data, taco: result});
 						$(".user-data").append(compiledTemplate);
 					});
 				});
