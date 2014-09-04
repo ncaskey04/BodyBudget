@@ -1,0 +1,186 @@
+Searching 241 files for "page-section"
+
+/Users/maiahariton/Desktop/new/BodyBudget/app/views/shared/_navbar_grey.html.erb:
+  165  }
+  166
+  167: .page-section {
+  168      width: 100%;
+  169      min-height: 800px;
+  ...
+  171  }
+  172
+  173: .page-section h1 {
+  174      font-size: 4em;
+  175      margin: 50px 0;
+  176  }
+  177
+  178: .page-section h1 span {
+  179      font-weight: 200;
+  180  }
+  181
+  182: .page-section h2 {
+  183      font-size: 3em;
+  184      font-weight: 900;
+  ...
+  188  }
+  189
+  190: .page-section p {
+  191      font-size: 1.2em;
+  192      font-weight: 200;
+  ...
+  194  }
+  195
+  196: .page-section p.lead {
+  197      font-size: 1.8em;
+  198  }
+  ...
+  202  }
+  203
+  204: .page-section p.caption {
+  205      color: #fff;
+  206      text-shadow: 1px 1px 1px #000;
+  207  }
+  208
+  209: .page-section.intro {
+  210      min-height: 600px;
+  211  }
+
+/Users/maiahariton/Desktop/new/BodyBudget/app/views/sites/index.html.erb:
+  124  }
+  125
+  126: .page-section {
+  127      width: 100%;
+  128      padding: 50px 0;
+  ...
+  130  }
+  131
+  132: .page-section h1 {
+  133      font-size: 4em;
+  134      margin: 50px 0;
+  ...
+  136  }
+  137
+  138: .page-section h1 span {
+  139      font-weight: 200;
+  140      background-color: #001450;
+  141  }
+  142
+  143: .page-section h2 {
+  144      font-size: 3em;
+  145      font-weight: 900;
+  ...
+  150  }
+  151
+  152: .page-section p {
+  153      font-size: 1.2em;
+  154      font-weight: 200;
+  ...
+  157  }
+  158
+  159: .page-section p.lead {
+  160      font-size: 1.8em;
+  161      background-color: #001450;
+  ...
+  166  }
+  167
+  168: .page-section p.caption {
+  169      color: #fff;
+  170      text-shadow: 1px 1px 1px #000;
+  ...
+  434                  <div>CA, USA</div>
+  435          </div>
+  436:         <div class="page-section">
+  437              <div class="row">
+  438                   <div id="map-container"></div>
+
+/Users/maiahariton/Desktop/new/BodyBudget/app/views/sites/show.html.erb:
+  165  }
+  166
+  167: .page-section {
+  168      width: 100%;
+  169      min-height: 800px;
+  ...
+  171  }
+  172
+  173: .page-section h1 {
+  174      font-size: 4em;
+  175      margin: 50px 0;
+  176  }
+  177
+  178: .page-section h1 span {
+  179      font-weight: 200;
+  180  }
+  181
+  182: .page-section h2 {
+  183      font-size: 3em;
+  184      font-weight: 900;
+  ...
+  188  }
+  189
+  190: .page-section p {
+  191      font-size: 1.2em;
+  192      font-weight: 200;
+  ...
+  194  }
+  195
+  196: .page-section p.lead {
+  197      font-size: 1.8em;
+  198  }
+  ...
+  202  }
+  203
+  204: .page-section p.caption {
+  205      color: #fff;
+  206      text-shadow: 1px 1px 1px #000;
+  207  }
+  208
+  209: .page-section.intro {
+  210      min-height: 600px;
+  211  }
+
+/Users/maiahariton/Desktop/new/BodyBudget/public/404.html:
+  166  }
+  167
+  168: .page-section {
+  169      width: 100%;
+  170      min-height: 800px;
+  ...
+  172  }
+  173
+  174: .page-section h1 {
+  175      font-size: 4em;
+  176      margin: 50px 0;
+  177  }
+  178
+  179: .page-section h1 span {
+  180      font-weight: 200;
+  181  }
+  182
+  183: .page-section h2 {
+  184      font-size: 3em;
+  185      font-weight: 900;
+  ...
+  189  }
+  190
+  191: .page-section p {
+  192      font-size: 1.2em;
+  193      font-weight: 200;
+  ...
+  195  }
+  196
+  197: .page-section p.lead {
+  198      font-size: 1.8em;
+  199  }
+  ...
+  203  }
+  204
+  205: .page-section p.caption {
+  206      color: #fff;
+  207      text-shadow: 1px 1px 1px #000;
+  208  }
+  209
+  210: .page-section.intro {
+  211      min-height: 600px;
+  212  }
+
+32 matches across 4 files
