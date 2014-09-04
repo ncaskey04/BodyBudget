@@ -53,6 +53,9 @@ gem 'handlebars_assets'
 # use gon to use controller info in JS
 gem 'gon'
 
+# use Typhoeus
+gem 'typhoeus'
+
 group :development do
   gem 'pry'
   gem 'pry-rails'
