@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  before_action :is_authenticated?, :except => [:new, :create]
 
   def index
+    @current_user = current_user
   end
 
   def show
@@ -24,6 +26,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    current_user.destroy
+    redirect_to login_path
   end
  
 end

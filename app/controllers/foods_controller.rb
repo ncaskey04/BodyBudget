@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+  before_action :is_authenticated?, :except => [:new, :create]
+  
   def index
   end
 
