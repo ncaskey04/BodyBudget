@@ -31,9 +31,6 @@
 	background-color: #ecf0f1;
     z-index: 0;
     position: relative;
-    width: 424px;
-    height: 500px;
-    margin: 2em;
 }
 
 .margin-top {
@@ -67,7 +64,7 @@
     /*width: 100%;*/
     height: 100%;
     text-align: center;
-    line-height: 399px;
+    line-height: 400px;
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -86,10 +83,10 @@
     /*width: 100%;*/
     height: 100%;
     text-align: center;
-    line-height: 399px;
+    line-height: 500px;
     text-transform: uppercase;
     letter-spacing: 1px;
     white-space: nowrap;
-    width: 399px;
+    width: 400px;
     z-index: -1;
   }

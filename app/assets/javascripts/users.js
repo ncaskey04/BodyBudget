@@ -69,6 +69,10 @@ var foodResults = gon.results_food;
 
 puts(foodResults);
 
+var foodResult = gon.miles
+
+console.log(foodResult);
+
 
 window.myDoughnut = new Chart(ctx).Doughnut(data, {
   responsive : false,
