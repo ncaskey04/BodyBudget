@@ -2,39 +2,29 @@
 <html>
 <head>
   <title>Bodybudget</title>
-
-	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300' rel='stylesheet' type='text/css'>
-
-	<link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
-
-	<link href='http://fonts.googleapis.com/css?family=Six+Caps' rel='stylesheet' type='text/css'>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Six+Caps' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= include_gon %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= include_gon %> 
-
 </head>
-
 <body>
-
-
-<%= render partial: "shared/navbar_grey" %>
-
-
-
+<%= render partial:"shared/navbar_grey"%>
 <%= yield %>
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-md-8">
-               		 <p class="pull-right" style="color: black;"><a href="#">Back to top</a></p>
+                   <p class="pull-right" style="color: black;"><a href="#">Back to top</a></p>
                     <p>Copyright &copy; Body Budget 2014</p>
                 </div>
-                <!-- /.col-md-8 -->
             </div>
-            <!-- /.row -->
         </footer>
 <!-- <script src="Chart.js"></script> -->
 </body>

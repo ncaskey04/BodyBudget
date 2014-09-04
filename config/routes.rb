@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'foods/:id', to: 'foods#show'
 
-  root to: 'users#index'
+  root to: 'sites#index'
 
   get 'articles/index'
 
