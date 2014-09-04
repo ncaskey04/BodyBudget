@@ -4,11 +4,14 @@
 		
 		<h3>Search Result:</h3>
 		<div>
+		<p> Recipe rating: <%= @rating %> </p>
+		<p> Serving size: <%= @serving %> </p>
 		<% @results.each do |ingredient| %>
 			<p>
 				<%= ingredient %>
 			</p>	
 		<% 	end %>
+		<p> Recipe Url: <a href="<%= @url %>"><%= @url %></a> </p>
 			<div class="user-data text-center">
 				<img class="bowl" src="http://www.sprig-and-sprout.com/wp-content/uploads/2012/07/bowls.png" alt="bowl">
 			</div>

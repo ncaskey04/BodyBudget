@@ -12,8 +12,10 @@ class FoodsController < ApplicationController
       )
     @deets = JSON.parse(request.body)
     ap @deets
-    
+    @rating = JSON.parse(request.body)["rating"]
+    @serving = JSON.parse(request.body)["numberOfServings"]
     @results = JSON.parse(request.body)["ingredientLines"]
+    @url = JSON.parse(request.body)["source"]["sourceRecipeUrl"]
 
     
   end
