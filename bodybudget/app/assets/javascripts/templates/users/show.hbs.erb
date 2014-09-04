@@ -1,11 +1,11 @@
 	<div class="food">
-		<div class="col-sm-6">
+		<div class="col-sm-3">
 			<div class="thumbnail thumb-ht">
 				{{#each result.images}}
 					<img src="{{hostedLargeUrl}}" alt="Picture of Food">
 				{{/each}}
 				<div class="caption">
-					<a href="foods/{{result.name}}"><h3> {{result.name}}</h3></a>
+					<a href="/foods/{{result.id}}"><h3> {{result.name}}</h3></a>
 						
 						{{#each result.nutritionEstimates}}
 						

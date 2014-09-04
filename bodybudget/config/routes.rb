@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   get 'foods/new'
 
-  get 'foods/create'
+  post 'foods/create'
 
-  get 'foods/delete'
+  delete 'foods/delete'
+
+  get 'foods/index'
+
+  get 'foods/:id', to: 'foods#show'
 
   root to: 'users#index'
 
@@ -17,5 +21,6 @@ Rails.application.routes.draw do
   resources :users
   resources :fitbit
   get 'fitbit/results'
+
 
 end
