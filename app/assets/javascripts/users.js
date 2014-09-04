@@ -2,7 +2,7 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function() {
-    
+
 var course = "";
 var date = new Date();
 var timeNow = date.getHours()+":"+date.getMinutes()
@@ -35,7 +35,7 @@ console.log(gon.miles)
         label: "Protein"
     },
     {
-        value: 30,  
+        value: 30,
         color: "#46BFBD",
         highlight: "#5AD3D1",
         label: "Fat",
@@ -135,8 +135,8 @@ $(".user-data").on("click",".food", function(){
 	myDoughnut.segments[1].value = parseFloat(protein);
 	myDoughnut.segments[2].value = parseFloat(carbs);
 	$(".cal-caption").html("<p>"+calorie+"</p>").countTo({
-            from: 0, 
-            to: calorie, 
+            from: 0,
+            to: calorie,
             speed: 1000,
             refreshInterval: 50 });
 	$(".protein-caption span").html(parseInt(calorie));
@@ -162,7 +162,7 @@ if (time >= 5 && time < 12){
 
 
 function searchFood(search){
-	return $.ajax({ 
+	return $.ajax({
 		url: "http://api.yummly.com/v1/api/recipes?_app_id="+yummlyId+"&_app_key="+yummlyKey+"&q="+search,
 		data: {
 			'maxResult': 12,
@@ -204,13 +204,13 @@ function searchFoodId(id){
 		e.preventDefault();
 		$(".user-data").html("");
 		var recipe = $('.recipeName').val();
-	
+
 		//defered promise
 		$.when(searchFood(recipe)).done(function(result){
 			if(result.matches.length === 0){
 				$('.user-data').append("<h2>Sorry nothing came up!</h2>");
 			} else {
-			
+
 			}
 			$('.user-data').html("");
 				// console.log(result);
@@ -218,13 +218,13 @@ function searchFoodId(id){
 				result.matches.forEach(function (itm){
 
 
-					$.when(searchFoodId(itm.id)).done(function(data){ 
+					$.when(searchFoodId(itm.id)).done(function(data){
 						console.log(data);
 						var compiledTemplate = HandlebarsTemplates['users/show']({result: data, taco: result});
 						$(".user-data").append(compiledTemplate);
 					});
 				});
-				
+
 			}
 		);
 		});
