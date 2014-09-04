@@ -7,7 +7,11 @@ color: #FFFFFF;
 }
 
 #colordiv {
-background-color: #001450;
+    background-color: #001450;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .bgcontainer {
@@ -15,7 +19,6 @@ background-color: #001450;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    padding-bottom:100px;
 }
 
 .navbar-inverse {
@@ -124,15 +127,18 @@ color: #FFFFFF;
     width: 100%;
     min-height: 800px;
     padding: 50px 0;
+    background-color: #001450;
 }
 
 .page-section h1 {
     font-size: 4em;
     margin: 50px 0;
+    background-color: #001450;
 }
 
 .page-section h1 span {
     font-weight: 200;
+    background-color: #001450;
 }
 
 .page-section h2 {
@@ -141,16 +147,19 @@ color: #FFFFFF;
     color: #fff;
     margin: 0 0 30px;
     text-shadow: 2px 2px 2px #000;
+    background-color: #001450;
 }
 
 .page-section p {
     font-size: 1.2em;
     font-weight: 200;
     margin: 0 25% 20px 0;
+    background-color: #001450;
 }
 
 .page-section p.lead {
     font-size: 1.8em;
+    background-color: #001450;
 }
 
 .navbar {
@@ -160,6 +169,7 @@ margin-bottom: 0px;
 .page-section p.caption {
     color: #fff;
     text-shadow: 1px 1px 1px #000;
+    background-color: #001450;
 }
 
 .page-section.intro {
@@ -211,6 +221,7 @@ margin-bottom: 0px;
 
 hr {
     border-color: #ddd;
+    background-color: #001450;
 }
 
 .signup {
@@ -355,7 +366,7 @@ hr {
           <div class="container">
             <div class="carousel-caption">
               <h1>Get moving!</h1>
-              <p><a class="btn btn-lg btn-primary" href='/auth/:provider/callback' role="button" style="color: #001450;">Log in with your fitbit!</a></p>
+              <p><a class="btn btn-lg btn-primary" href='/auth/fitbit/' role="button" style="background-color: #001450;">Log in with your fitbit!</a></p>
             </div>
           </div>
         </div>
@@ -366,7 +377,7 @@ hr {
             <div class="carousel-caption">
               <h1>We help you keep up with your calories intake</h1>
               <p>Are you wondering what you should eat right now?</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/sites/show" role="button">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -377,13 +388,13 @@ hr {
             <div class="carousel-caption">
               <h1>Need more motivation?</h1>
               <p>Once you log in with your Fitbit, we will help you reaching your goals</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              <p><a class="btn btn-lg btn-primary" href="/sites/show"  role="button">Learn more</a></p>
             </div>
           </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+       <a class="left carousel-control" href="#carousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" href="#carousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <!-- /.carousel -->
 
