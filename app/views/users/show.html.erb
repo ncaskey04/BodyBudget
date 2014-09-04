@@ -1,39 +1,37 @@
-<div class="row grey">
-	<p class="red-band"></p>
-	<div class="">
-		<div class="col-xs-9 course-time wire-one-large border-right"></div>
+<div class="container">
+	<div class="row grey">
+		<p class="red-band"></p>
+		<div class="">
+			<div class="col-xs-9 course-time wire-one-large border-right"></div>
+		</div>
+		<div class="col-xs-3 form text-right">
+			<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
+			<%= label_tag "recipe", "What do you want to eat?", class: "control-label" %>
+			<%= text_field_tag '', nil, id:"recipe", placeholder: "Search", class: "recipeName form-control", autofocus: true %>
+			<%= submit_tag ("Find Food"), class: "btn btn-success margin-top margin-bottom" %>
+			<% end %>
+		</div>
 	</div>
-	<div class="col-xs-3 form text-right">
-		<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
-		<%= label_tag "recipe", "What do you want to eat?", class: "control-label" %>
-		<%= text_field_tag '', nil, id:"recipe", placeholder: "Search", class: "recipeName form-control", autofocus: true %>
-		<%= submit_tag ("Find Food"), class: "btn btn-success margin-top margin-bottom" %>
-		<% end %>
-	</div>
-</div>
 
-<div class="row">
-	<div class="canvas-holder col-sm-4 grey">
-			<canvas id="chart-area" width="400" height="400"></canvas>
-			<div class="cal-title">Cal</div>
-			<div class="cal-caption">0</div>
-			<!-- <div class="protein-caption">Protein: <span></span></div>
-			<div class="fat-caption">Fat: </div>
-			<div class="carb-caption">Carbs: </div> -->
+	<div class="row">
+		<div class="canvas-holder col-xs-4 grey text-center margin-right">
+				<canvas id="chart-area" width="350" height="350"></canvas>
+				<div class="cal-title">Cal</div>
+				<div class="cal-caption">0</div>
+		</div>
+		<div class="canvas-holder col-xs-4 grey text-center">
+			<canvas id="bar-chart" width="350" height="350"></canvas>
+		</div>
+		<div class="canvas-holder col-xs-4 grey"></div>
 	</div>
-	<div class="canvas-holder col-sm-4 grey">
-		<canvas id="bar-chart" width="400" height="400"></canvas>
-	</div>
-	<div class="canvas-holder col-sm-4 grey"></div>
-</div>
 
 
-<div class="row">
-	<h2>Search Result:</h2>
-	<div class="col-sm-12">
-		<div class="user-data text-center">
-			<img class="bowl" src="http://onnoodles.com/beta/images/onnoodles_icon_sm.png" alt="bowl">
+	<div class="row">
+		<h2>Search Result:</h2>
+		<div class="col-sm-12">
+			<div class="user-data text-center">
+				<img class="bowl" src="http://onnoodles.com/beta/images/onnoodles_icon_sm.png" alt="bowl">
+			</div>
 		</div>
 	</div>
 </div>
-
