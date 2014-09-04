@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   get 'foods/new'
 
-  get 'foods/create'
+  post 'foods/create'
 
-  get 'foods/delete'
+  delete 'foods/delete'
+
+  get 'foods/index'
+
+  get 'foods/:id', to: 'foods#show'
 
   get 'fitbit/index'
 
@@ -19,5 +23,6 @@ Rails.application.routes.draw do
   get '/logout', :to => 'sessions#destroy'
 
   resources :users
+
 
 end
