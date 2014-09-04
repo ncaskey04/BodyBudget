@@ -67,6 +67,15 @@
     border-radius: 20px;
 }
 
+.grey-box {
+    background-color: #ecf0f1;
+    z-index: 0;
+    position: relative;
+    height: 400px;
+    padding: 2em;
+    border-radius: 20px;
+}
+
 .border-white {
     border-style: solid;
     border-color: white;
@@ -78,6 +87,10 @@
 
 .margin-top-negative {
 	margin-top: -1em;
+}
+
+.margin-top-small {
+    margin-top: -.5em;
 }
 
 .margin-bottom {
