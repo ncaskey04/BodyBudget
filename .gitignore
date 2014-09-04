@@ -14,32 +14,3 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-// FITBIT API INFO
-
-Client (Consumer) Key
-d4464fb6e7bf4d51a4c201734864aaec
-
-Client (Consumer) Secret
-6c0a4d78593c42c5a9add545b74b54eb
-
-Temporary Credentials (Request Token) URL
-https://api.fitbit.com/oauth/request_token
-
-Token Credentials (Access Token) URL
-https://api.fitbit.com/oauth/access_token
-
-Authorize URL
-https://www.fitbit.com/oauth/authorize
-
-(obtain from: https://dev.fitbit.com/apps/details/2299H7)
-
-
-// YUMMLY API INFO
-
-Application ID: a900cf96
-Application Key: f97fcae4c6889603ad8efcfac7aa101d
-
-testUrl: http://api.yummly.com/v1/api/recipes?_app_id=537f89a1&_app_key=eb90b638af81321b1fefb69bc52fc48b&q=onion+soup&requirePictures=true
-
-(obtain from: https://developer.yummly.com/admin/access_details)
