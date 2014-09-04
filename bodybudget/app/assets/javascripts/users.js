@@ -31,12 +31,28 @@ var barData = {
    datasets: [
      	{
          label: "My First dataset",
-         fillColor: "rgba(220,220,220,0.5)",
-         strokeColor: "rgba(220,220,220,0.8)",
-         highlightFill: "rgba(220,220,220,0.75)",
-         highlightStroke: "rgba(220,220,220,1)",
-         data: [65, 59, 80]
+         fillColor: "#46BFBD",
+         // strokeColor: "rgba(220,220,220,0.8)",
+         highlightFill: ["blue", "red", "green"],
+         // highlightStroke: "rgba(220,220,220,1)",
+         data: [60 ,60, 0]
      	},
+     	{
+         label: "My First dataset",
+         fillColor: "red",
+         // strokeColor: "rgba(220,220,220,0.8)",
+         // highlightFill: "rgba(220,220,220,0.75)",
+         // highlightStroke: "rgba(220,220,220,1)",
+         data: [60, 60, 0]
+     	},
+     	{
+         label: "My First dataset",
+         fillColor: "#46BFBD",
+         // strokeColor: "rgba(220,220,220,0.8)",
+         // highlightFill: "rgba(220,220,220,0.75)",
+         // highlightStroke: "rgba(220,220,220,1)",
+         data: [0, 60, 0]
+     	}
    ]
 };
 
@@ -65,7 +81,35 @@ window.myDoughnut = new Chart(ctx).Doughnut(data, {
   tooltipFontSize: 20,
 });
 
-var myBarChart = new Chart(ctz).Bar(barData);
+var myBarChart = new Chart(ctz).Bar(barData, {
+    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+    scaleBeginAtZero : true,
+
+    //Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : false,
+
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(0,0,0,.05)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 1,
+
+    //Boolean - If there is a stroke on each bar
+    barShowStroke : false,
+
+    //Number - Pixel width of the bar stroke
+    barStrokeWidth : 1,
+
+    //Number - Spacing between each of the X value sets
+    barValueSpacing : 10,
+
+    //Number - Spacing between data sets within X values
+    barDatasetSpacing : 1,
+
+    //String - A legend template
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+
+});
 
 $(".user-data").on("click",".food", function(){
 	var fat = $(this).find(".FAT").attr("data-fat");
@@ -102,7 +146,7 @@ function searchFood(search){
 	return $.ajax({ 
 		url: "http://api.yummly.com/v1/api/recipes?_app_id=25e7217b&_app_key=26571850ea53d59ce432e9b9448f16b9&q="+search,
 		data: {
-			'maxResult': 10,
+			'maxResult': 12,
 			"rating": 5,
 			"allowedCourse[]": "course^course-"+course,
 			// "flavor.meaty.min": 0,
@@ -130,11 +174,11 @@ function searchFoodId(id){
 	});
 }
 
-
-
-// function searchFoodId(search){
-// 	return $.getJSON(//api.yummly.com/v1/api/recipe/recipe-id?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY
+// function searchFitBit(data) {
+// 	return $.getJSON({fitbit/show
+// 	})
 // }
+
 
 
 	$(".getInfo").on('submit', function(e){

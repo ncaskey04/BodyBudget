@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-sm-6">
+		<div class="course-time"></div>
+		<div class="row">
+			<div class="col-xs-9 form">
+				<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
+				<%= label_tag "recipe", "What do you want to eat?", class: "control-label" %>
+				<%= text_field_tag '', nil, id:"recipe", class: "recipeName form-control", autofocus: true %>
+				<%= submit_tag ("Find Food"), class: "btn btn-success margin-top margin-bottom" %>
+				<% end %>
+			</div>
+			<div class="col-xs-3"></div>
+			</div>
+		<h3>Search Result:</h3>
+		<div>
+			<div class="user-data text-center">
+				<img class="bowl" src="http://www.sprig-and-sprout.com/wp-content/uploads/2012/07/bowls.png" alt="bowl">
+			</div>
+		</div>
+	</div>
+
+	<div id="fixed-container" class="canvas-holder col-sm-6">
+		<div class="row grey">
+			<canvas id="chart-area" width="400" height="400"></canvas>
+			<div class="cal-title">Cal</div>
+			<div class="cal-caption">0</div>
+			<!-- <div class="protein-caption">Protein: <span></span></div>
+			<div class="fat-caption">Fat: </div>
+			<div class="carb-caption">Carbs: </div> -->
+		</div>
+		<div class="row">
+			<canvas id="bar-chart" width="300" height="300"></canvas>
+		</div>
+	</div>
+</div>
