@@ -125,7 +125,7 @@ color: #FFFFFF;
 
 .page-section {
     width: 100%;
-    min-height: 800px;
+    /*min-height: 800px;*/
     padding: 50px 0;
     background-color: #001450;
 }
@@ -348,14 +348,13 @@ hr {
 </style>
 
 <div id="colordiv">
-
     <!--Carousel-->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="carousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
       </ol>
       <!--Carousel-->
 
@@ -393,8 +392,11 @@ hr {
           </div>
         </div>
       </div>
-       <a class="left carousel-control" href="#carousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-        <a class="right carousel-control" href="#carousel1" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+     <!--   <a class="left carousel-control" href="#carousel1" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> -->
+       <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
     <!-- /.carousel -->
 
@@ -448,8 +450,10 @@ hr {
 
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
+<script>
 
   jQuery(function ($) {
         $('.scroll-link').on('click', function (event) {
