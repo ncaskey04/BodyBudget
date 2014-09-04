@@ -10,7 +10,6 @@
 <body>
 <!--         nav bar -->
 <div id="colordiv">
-        <%= render partial: "shared/navbar_grey" %>
     <!--         nav bar -->
 
     <!--Carousel-->
@@ -30,7 +29,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Get moving!</h1>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Log in with your fitbit!</a></p>
+              <p><a class="btn btn-lg btn-primary" href='/auth/:provider/callback' role="button" style="color: #001450;">Log in with your fitbit!</a></p>
             </div>
           </div>
         </div>
@@ -210,7 +209,6 @@
 </script>
 
 
-
 <style>
 .row {
 margin-left: 5px;
@@ -219,7 +217,7 @@ color: #FFFFFF;
 }
 
 #colordiv {
-background-color: #296294;
+background-color: #001450;
 }
 
 .bgcontainer {
@@ -231,24 +229,23 @@ background-color: #296294;
 }
 
 .navbar-inverse {
-    background-color: #296294;
+    background-color: #001450;
 }
 
 .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    background-color: #296294;
-    border-bottom: 3px solid white;
+    background-color: #669999;
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #71AB6F;
+    background-color: #001450;
 }
 
 .dropdown-menu {
-    background-color: #71AB6F;
+    background-color: #001450;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    background-color: #428BCA;
+    background-color: #669999;
 }
 
 .navbar-inverse {
