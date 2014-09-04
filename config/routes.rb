@@ -25,8 +25,5 @@ Rails.application.routes.draw do
   get '/logout', :to => 'sessions#destroy'
 
   resources :users
-  resources :fitbit
-  get 'fitbit/results'
-
-
+  
 end
