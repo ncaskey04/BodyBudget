@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :foods
 
 
-  def fitbit_data
+  def fitbit
     consumer_key = ENV["FIT_BIT_KEY"]
     consumer_secret = ENV["FIT_BIT_SECRET"]
      
@@ -15,9 +15,6 @@ class User < ActiveRecord::Base
               :user_id => self.uid
             )
 
-    # ap @client.activities
-
-    # current_user.fitbit.activities
   end
 
   def self.authenticate email, password

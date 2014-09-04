@@ -10,10 +10,6 @@ Rails.application.routes.draw do
 
   get 'foods/:id', to: 'foods#show'
 
-  get 'fitbit/index'
-
-  get 'fitbit/results'
-
   root to: 'users#index'
 
   get 'articles/index'
@@ -23,6 +19,8 @@ Rails.application.routes.draw do
   get '/logout', :to => 'sessions#destroy'
 
   resources :users
+  resources :fitbit
+  get 'fitbit/results'
 
 
 end
