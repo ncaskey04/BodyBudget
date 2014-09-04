@@ -2,7 +2,26 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function() {
-  
+    
+var course = "";
+var date = new Date();
+var timeNow = date.getHours()+":"+date.getMinutes()
+
+var time = date.getHours();
+var ctx = $("#chart-area")[0].getContext("2d");
+var ctz = $("#bar-chart")[0].getContext("2d");
+var foodResults = gon.results_food;
+
+
+var milesResult = gon.miles;
+var foodResult = gon.food;
+var calsInResult = parseInt(gon.calsIn["foods-log-caloriesIn"][0].value);
+var calsOutResult = parseInt(gon.calsOut["activities-tracker-calories"][0].value);
+var stepsResult = gon.steps;
+
+console.log(gon.miles)
+
+
   var data = [
     {
         value: 30,
@@ -35,7 +54,7 @@ var barData = {
          // strokeColor: "rgba(220,220,220,0.8)",
          highlightFill: ["blue", "red", "green"],
          // highlightStroke: "rgba(220,220,220,1)",
-         data: [2000 ,2000, 2000 ]
+         data: [2000 ,calsInResult, calsOutResult]
      	},
      	// {
       //    label: "My First dataset",
@@ -55,27 +74,6 @@ var barData = {
      	// }
    ]
 };
-
-
-//refactoring search api code
-//search yummly api
-var course = "";
-var date = new Date();
-var timeNow = date.getHours()+":"+date.getMinutes()
-
-var time = date.getHours();
-var ctx = $("#chart-area")[0].getContext("2d");
-var ctz = $("#bar-chart")[0].getContext("2d");
-var foodResults = gon.results_food;
-
-
-var milesResult = gon.miles;
-var foodResult = gon.food;
-// var calsInResult = gon.calsIn["foods-log-caloriesIn"][0].value;
-var calsOutResult = gon.calsOut;
-var stepsResult = gon.steps;
-
-console.log(calsOutResult)
 
 $('.time-now').append("<p>TIME: "+timeNow+"</p >");
 
@@ -145,15 +143,15 @@ $(".user-data").on("click",".food", function(){
 
 if (time >= 5 && time < 12){
 	course = "Breakfast and Brunch";
-	$('.course-time').append("<p>"+course+" time</p>");
+	$('.course-time').append("<p>TIME: "+timeNow+" "+course+" time</p>");
 } else if (time >= 12 && time < 16){
 	course = "Lunch";
-	$('.course-time').append("<p>"+course+" time</p>");
+	$('.course-time').append("<p>TIME: "+timeNow+" "+course+" time</p>");
 } else if (time >=16 && time < 24) {
 	course = "Main Dishes";
-	$('.course-time').append("<p> Dinner time</p>");
+	$('.course-time').append("<p>TIME: "+timeNow+" Dinner time</p>");
 } else {
-	$('.course-time').append("<p> You should be asleep </p>");
+	$('.course-time').append("<p>TIME: "+timeNow+" You should be asleep </p>");
 }
 
 
