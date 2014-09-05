@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: bodybudget_production
-  username: bodybudget
   # password: <%= ENV['BODYBUDGET_DATABASE_PASSWORD'] %>
