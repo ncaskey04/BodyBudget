@@ -13,22 +13,38 @@ var ctz = $("#bar-chart")[0].getContext("2d");
 var foodResults = gon.results_food;
 
 
-var milesResult = gon.miles;
+var milesResult = parseInt(gon.miles["activities-tracker-distance"][0].value)   ;
 var foodResult = gon.food;
 var calsInResult = parseInt(gon.calsIn["foods-log-caloriesIn"][0].value);
 var calsOutResult = parseInt(gon.calsOut["activities-tracker-calories"][0].value);
 var stepsResult = gon.steps;
 var calGoal = gon.calGoal["goals"]["caloriesOut"];
 var netCal = calsInResult - calsOutResult;
+var calBudget = calGoal - netCal; 
 
 var yummlyId = gon.yummlyId;
 var yummlyKey = gon.yummlyKey;
 var projectedCal = netCal;
 
-foodResult.forEach(function(food){
-    // food.value
-        $(".food").append("<li>"+food.name+"</li>");
-});
+if (foodResult.length <= 9){
+    foodResultLength = foodResult.length;
+} else {
+    foodResultLength = 9;
+}
+
+for (var i = 0; i < foodResultLength; i++) {
+    
+    if (foodResult[i].name != undefined){
+        $(".food").append("<li>"+foodResult[i].name+"</li>");
+    }
+};
+
+console.log(calGoal);
+$(".miles span").append(milesResult);
+$(".cal-goal").append("<p> You have "+netCal+" CAL out of "+calGoal+" CAL</p><p>"+calBudget+" CAL left in your budget");
+// foodResult.forEach(function if (food){
+//         $(".food").append("<li>"+food.name+"</li>");
+// });
 
 
   var data = [

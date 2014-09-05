@@ -1,43 +1,46 @@
-<div class="container">
-<div class="row margin-top">
-	<div class="row grey">
-		<p class="red-band"></p>
-		<div class="">
-			<div class="col-xs-9 course-time wire-one-large border-right"></div>
-		</div>
-		<div class="col-xs-3 form text-right">
-			<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
-			<%= label_tag "recipe", "What do you want to eat?", class: "control-label" %>
-			<%= text_field_tag '', nil, id:"recipe", placeholder: "Search", class: "recipeName form-control", autofocus: true %>
-			<%= submit_tag ("Find Food"), class: "btn btn-success margin-top margin-bottom" %>
-			<% end %>
+<div class="container-fluid">
+	<div class="row move-top green-bg">
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="row grey">
+				<div class="col-xs-4 course-time wire-one-large	text-center"></div>
+				<div class="cal-goal wire-one-small text-center col-xs-4"></div>
+				<div class="col-xs-4 form text-right">
+					<%= form_tag 'javascript:void(0)', class: "getInfo" do %>
+					<%= label_tag "recipe", "What do you want to eat?", class: "control-label" %>
+					<%= text_field_tag '', nil, id:"recipe", placeholder: "Search", class: "recipeName form-control", autofocus: true %>
+					<%= submit_tag ("Find Food"), class: "btn btn-success margin-top margin-bottom" %>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="row margin-top-negative">
+				<div class="canvas-holder col-lg-4 border-green grey-box">
+						<canvas id="chart-area" width="350" height="350"></canvas>
+						<div class="cal-title">Cal</div>
+						<div class="cal-caption">0</div>
+				</div>
+				<div class="canvas-holder col-lg-4 grey-box border-green">
+					<canvas id="bar-chart" width="350" height="350"></canvas>
+				</div>
+				<div class="canvas-holder col-lg-4 border-green grey-box">
+					<p class="wire-one margin-top-small">STEPS taken: <span> </span></p>
+					<p class="miles wire-one margin-top-small">MILES: <span> </span></p>
+					<p class="wire-one margin-top-small">recent FOODS eaten:</p>
+					<p class="food margin-top-small"><ul></ul></p>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="row margin-top-negative">
-		<div class="canvas-holder col-lg-4 border-white grey-box">
-				<canvas id="chart-area" width="350" height="350"></canvas>
-				<div class="cal-title">Cal</div>
-				<div class="cal-caption">0</div>
-		</div>
-		<div class="canvas-holder col-lg-4 grey-box border-white">
-			<canvas id="bar-chart" width="350" height="350"></canvas>
-		</div>
-		<div class="canvas-holder col-lg-4 border-white grey-box">
-			<p class="wire-one margin-top-small">STEPS taken: <span> </span></p>
-			<p class="wire-one margin-top-small">MILES: <span> </span></p>
-			<p class="wire-one margin-top-small">FOODS eaten:</p>
-			<p class="food margin-top-small"><ul></ul></p>
-		</div>
-	</div>
-</div>
+	<div class="row green-band"></div>
 
-
-	<div class="row">
-		<h1 class="wire-one">Search Result:</h1>
-		<div class="col-sm-12">
-			<div class="user-data text-center">
-				<img class="bowl" src="http://onnoodles.com/beta/images/onnoodles_icon_sm.png" alt="bowl">
+	<div class="col-sm-10 col-sm-offset-1">
+		<div class="row">
+			<h1 class="wire-one">Search Result:</h1>
+			<div class="col-sm-12">
+				<div class="user-data text-center">
+					<img class="bowl" src="http://onnoodles.com/beta/images/onnoodles_icon_sm.png" alt="bowl">
+				</div>
 			</div>
 		</div>
 	</div>
