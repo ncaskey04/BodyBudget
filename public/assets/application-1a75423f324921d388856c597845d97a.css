@@ -1,0 +1,189 @@
+/*// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+
+.green-band {
+    background-color: rgba(71, 191, 189, .5);
+    height: 8px;
+    width: 0 auto;
+    position: relative;
+}
+
+.red-band {
+    background-color: rgba(247, 70, 74, .75);
+    height: 30px;
+    width: 0 auto;
+    position: relative;
+    bottom: 0;
+}
+
+.green-bg {
+    background-color: #46BFBD;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em
+}
+
+.move-top{
+    top: 10px;
+}
+.six-caps{
+    font-family: 'Six Caps', sans-serif;
+    font-size: 60px;
+}
+
+.wire-one-small {
+    font-family: 'Wire One', sans-serif;
+    font-size: 45px;
+    line-height: 45px;
+}
+
+.wire-one {
+    font-family: 'Wire One', sans-serif;
+    font-size: 55px;
+}
+
+.wire-one-large p{
+    font-family: 'Wire One', sans-serif;
+    font-size: 60px;
+    line-height: 45px;
+    margin: 0;
+}
+
+.bowl {
+    width: 15%;
+    height: 15%;
+    position: relative;
+    top: 0px;
+}
+
+.header{
+	font-family:
+}
+
+.thumb-ht {
+	height: 425px;
+}
+
+.grey {
+	background-color: #ecf0f1;
+    z-index: 0;
+    position: relative;
+    height: 100%;
+    padding: 2em;
+    border-radius: 20px;
+}
+
+.grey-box {
+    background-color: #ecf0f1;
+    z-index: 0;
+    position: relative;
+    height: 400px;
+    padding: 2em;
+    border-radius: 20px;
+}
+
+.border-white {
+    border-style: solid;
+    border-color: white;
+}
+
+.border-green {
+    border-style: solid;
+    border-color: #46BFBD;
+}
+
+.margin-top {
+    margin-top: 1em;
+}
+
+.margin-top-negative {
+	margin-top: -1em;
+}
+
+.margin-top-small {
+    margin-top: -.5em;
+}
+
+.margin-bottom {
+	margin-bottom: 1em;
+}
+
+@media (min-width: 1600px){
+.pie-position{
+	  position: relative;
+      left: 15%;
+	}
+}
+
+@media (max-width: 600px){
+.pie-position{
+      position: relative;
+      left: 17%;
+    }
+}
+
+.canvas-holder {
+	margin-top: 2em;
+    position: relative;
+}
+
+.margin-right{
+   margin-right: 1em;
+}
+
+.cal-caption {
+    font-family: 'Wire One', sans-serif;
+    color: black;
+    opacity: 20;
+    font-size: 75px;
+    font-weight: 600;
+    position: relative;
+    top: 0;
+    /*left: 12px;*/
+    height: 100%;
+    text-align: center;
+    top: -540px;
+    line-height: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 0 auto;
+    z-index: -1;
+}
+
+.cal-title {
+    font-family: 'Wire One', sans-serif;
+    color: black;
+    opacity: 20;
+    font-size: 40px;
+    font-weight: 600;
+    position: relative;
+    /*left: 12px;*/
+    top: -150px;
+    height: 100%;
+    text-align: center;
+    line-height: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    width: 0 auto;
+    z-index: -1;
+  }
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylsheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */

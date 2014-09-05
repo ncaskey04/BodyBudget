@@ -56,7 +56,7 @@ gem 'gon'
 # use typhoeus for api calls
 gem 'typhoeus'
 
-group :development do
+group :development, :test do
   gem 'pry'
   gem 'pry-rails'
   gem 'ffaker', '~> 1.25.0'

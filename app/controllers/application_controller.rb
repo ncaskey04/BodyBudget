@@ -12,6 +12,12 @@ class ApplicationController < ActionController::Base
   	headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   end
 
+  # def page_not_found
+  #   respond_to do |format|
+  #     format.html { render template: 'errors/not_found_error', layout: 'layouts/application', status: 404 }
+  #     format.all  { render nothing: true, status: 404 }
+  #   end
+  # end
   
   def is_authenticated?
     redirect_to root_url if session[:user_id].nil?
