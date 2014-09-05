@@ -12,6 +12,15 @@ class ApplicationController < ActionController::Base
   	headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   end
 
+  
+  def is_authenticated?
+    redirect_to root_url if session[:user_id].nil?
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if !@current_user
+  end
+
   private
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
