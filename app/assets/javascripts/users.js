@@ -17,7 +17,7 @@ var milesResult = parseInt(gon.miles["activities-tracker-distance"][0].value)   
 var foodResult = gon.food;
 var calsInResult = parseInt(gon.calsIn["foods-log-caloriesIn"][0].value);
 var calsOutResult = parseInt(gon.calsOut["activities-tracker-calories"][0].value);
-var stepsResult = gon.steps;
+var stepsResult = gon.steps["activities-tracker-steps"][0].value;
 var calGoal = gon.calGoal["goals"]["caloriesOut"];
 var netCal = calsInResult - calsOutResult;
 var calBudget = calGoal - netCal; 
@@ -33,20 +33,15 @@ if (foodResult.length <= 9){
 }
 
 for (var i = 0; i < foodResultLength; i++) {
-    
     if (foodResult[i].name != undefined){
         $(".food").append("<li>"+foodResult[i].name+"</li>");
     }
 };
 
-console.log(calGoal);
 $(".miles span").append(milesResult);
 $(".cal-goal").append("<p> You have "+netCal+" CAL out of "+calGoal+" CAL</p><p>"+calBudget+" CAL left in your budget");
-// foodResult.forEach(function if (food){
-//         $(".food").append("<li>"+food.name+"</li>");
-// });
-
-
+$(".steps span").append(stepsResult);
+$(".cals").append("Cals In: "+calsInResult+" Cals Out: "+calsOutResult)
   var data = [
     {
         value: 30,
@@ -96,7 +91,7 @@ $('.time-now').append("<p>TIME: "+timeNow+"</p >");
 
 window.myDoughnut = new Chart(ctx).Doughnut(data, {
   responsive : false,
-  animateRotate: false,
+  animateRotate: true,
   animateScale: false,
   percentageInnerCutout: 80,
   animationEasing : "easeInOutQuart",
@@ -142,7 +137,7 @@ $(".user-data").on("click",".food", function(){
 	var fat = $(this).find(".FAT").attr("data-fat");
 	var carbs = $(this).find(".CHOCDF").attr("data-carbs");
 	var protein = $(this).find(".PROCNT").attr("data-protein");
-	var calorie = $(this).find(".ENERC_KJ").attr("data-calories");
+	var calorie = $(this).find(".ENERC_KCAL").attr("data-calories");
 	myDoughnut.segments[0].value = parseFloat(fat);
 	myDoughnut.segments[1].value = parseFloat(protein);
 	myDoughnut.segments[2].value = parseFloat(carbs);
@@ -179,20 +174,12 @@ function searchFood(search){
 	return $.ajax({
 		url: "http://api.yummly.com/v1/api/recipes?_app_id="+yummlyId+"&_app_key="+yummlyKey+"&q="+search,
 		data: {
-			'maxResult': 12,
+			'maxResult': 6,
 			"rating": 5,
 			"allowedCourse[]": "course^course-"+course,
-			// "flavor.meaty.min": 0,
-			// "flavor.meaty.max": 0,
-			// "flavor.sweet.min": 0,
-			// "flavor.sweet.max": 0,
-			// "flavor.sweet.min": 0,
-			// "flavor.sweet.max": 0,
-			// "flavor.piquant.min": 0,
-			// "flavor.piquant.max": 0,
-			// "nutrition.ENERC_KCAL.min": 100,
-			// "nutrition.ENERC_KCAL.max": 300,
-			"nutrition.PROCNT.min": 1,
+            "nutrition.PROCNT.min": 1,
+			"nutrition.ENERC_KCAL.min": 1,
+			"nutrition.ENERC_KCAL.max": calBudget,
 			"requirePictures": true,
 			format: "json"
 		},
@@ -207,13 +194,6 @@ function searchFoodId(id){
 	});
 }
 
-// function searchFitBit(data) {
-// 	return $.getJSON({fitbit/show
-// 	})
-// }
-
-
-
 	$(".getInfo").on('submit', function(e){
 		e.preventDefault();
 		$(".user-data").html("");
@@ -224,14 +204,10 @@ function searchFoodId(id){
 			if(result.matches.length === 0){
 				$('.user-data').append("<h2>Sorry nothing came up!</h2>");
 			} else {
-
-			}
 			$('.user-data').html("");
 				// console.log(result);
 
 				result.matches.forEach(function (itm){
-
-
 					$.when(searchFoodId(itm.id)).done(function(data){
 						console.log(data);
 						var compiledTemplate = HandlebarsTemplates['users/show']({result: data, taco: result});
@@ -240,7 +216,7 @@ function searchFoodId(id){
 				});
 
 			}
-		);
+		} );
 		});
 	});
 
