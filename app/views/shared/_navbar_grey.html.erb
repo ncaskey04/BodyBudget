@@ -353,7 +353,11 @@ hr {
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
                 <ul class="nav navbar-nav">
+                    <% if @current_user = nil %>
                     <li><a href='/auth/fitbit/' class="scroll-link" data-id="signup">Log In</a></li>
+                    <% else %>
+                    <li><a href='/logout' class="scroll-link" data-id="signup">Logout</a></li>
+                    <% end %>
                     <li><a href="/sites/show" class="scroll-link" data-id="whatwedo">About Us</a></li>
                 </ul>
             </nav>
