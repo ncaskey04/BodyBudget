@@ -1,5 +1,5 @@
 	<div class="food">
-		<div class="col-sm-3">
+		<div class="col-sm-2">
 			<div class="thumbnail thumb-ht">
 				{{#each result.images}}
 					<img src="{{hostedLargeUrl}}" alt="Picture of Food" style = "cursor:pointer;">
@@ -9,7 +9,7 @@
 						
 						{{#each result.nutritionEstimates}}
 						
-							{{#ifCond attribute "ENERC_KJ" }}
+							{{#ifCond attribute "ENERC_KCAL" }}
 							<p>
 								Calories: <span class = "{{attribute}}" data-calories = "{{value}}">{{value}}</span>
 							</p>

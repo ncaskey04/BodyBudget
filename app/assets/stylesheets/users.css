@@ -1,27 +1,21 @@
-// Place all the styles related to the users controller here.
+/*// Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.red-band {
-    background-color: #F7464A;
-    height: 25px;
-    top: -2em;
-    left: -2em;
-    width: 104.5%;
-    position: relative;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
-.position-fixed {
-    
-}
+*/
 
 .green-band {
     background-color: rgba(71, 191, 189, .5);
     height: 8px;
     width: 0 auto;
     position: relative;
+}
+
+.red-band {
+    background-color: rgba(247, 70, 74, .75);
+    height: 30px;
+    width: 0 auto;
+    position: relative;
+    bottom: 0;
 }
 
 .green-bg {
@@ -52,11 +46,15 @@
 .wire-one-large p{
     font-family: 'Wire One', sans-serif;
     font-size: 60px;
+    line-height: 45px;
     margin: 0;
 }
 
 .bowl {
-    margin-top: 3em;
+    width: 15%;
+    height: 15%;
+    position: relative;
+    top: 0px;
 }
 
 .header{
@@ -111,11 +109,20 @@
 	margin-bottom: 1em;
 }
 
-@media (min-width: 768px){
-#fixed-container{
-	  position: fixed;
+@media (min-width: 1600px){
+.pie-position{
+	  position: relative;
+      left: 15%;
 	}
 }
+
+@media (max-width: 600px){
+.pie-position{
+      position: relative;
+      left: 17%;
+    }
+}
+
 .canvas-holder {
 	margin-top: 2em;
     position: relative;
